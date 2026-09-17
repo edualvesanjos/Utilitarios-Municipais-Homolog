@@ -1,0 +1,126 @@
+/* =========================================================
+   Inscrição imobiliária — versão 1.5
+========================================================= */
+
+.registration-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.7fr);
+    gap: 24px;
+}
+
+.registration-panel {
+    border: 1px solid #dce4ec;
+    border-radius: 12px;
+    background: #f8fafc;
+    padding: 22px;
+}
+
+.registration-type-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.registration-type-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #cfd9e3;
+    border-radius: 999px;
+    background: white;
+    margin: 0;
+    padding: 9px 12px;
+    cursor: pointer;
+}
+
+.registration-type-option input {
+    width: auto;
+}
+
+.registration-status {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.registration-status > div {
+    border: 1px solid #dce4ec;
+    border-radius: 10px;
+    background: white;
+    padding: 13px;
+}
+
+.status-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #6b7786;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.registration-preview {
+    margin-top: 18px;
+}
+
+.registration-auto-copy {
+    margin: 18px 0 0;
+}
+
+.format-examples {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.format-examples div {
+    display: grid;
+    gap: 5px;
+}
+
+.format-examples span {
+    color: #617184;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.format-examples code {
+    border: 1px solid #dce4ec;
+    border-radius: 8px;
+    background: white;
+    padding: 10px;
+    color: #0f4c81;
+    font-size: 0.86rem;
+}
+
+.status-valid {
+    color: #14733c;
+}
+
+.status-invalid {
+    color: #b42318;
+}
+
+@media (max-width: 900px) {
+    .registration-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .registration-status {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-type-selector {
+        flex-direction: column;
+    }
+
+    .registration-type-option {
+        width: 100%;
+        border-radius: 10px;
+    }
+}

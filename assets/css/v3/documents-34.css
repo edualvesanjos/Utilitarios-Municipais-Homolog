@@ -1,0 +1,433 @@
+.documents-shell {
+    overflow: visible;
+}
+
+.documents-panel .main-heading {
+    align-items: flex-start;
+}
+
+.documents-panel #documentNewModel {
+    margin-left: auto;
+    align-self: flex-start;
+    white-space: nowrap;
+}
+
+.documents-models-panel,
+.documents-editor {
+    min-width: 0;
+    border: 1px solid var(--border-color, #d8e2ec);
+    border-radius: 14px;
+    background: var(--surface-color, #fff);
+}
+
+.documents-models-panel {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    padding: 16px;
+}
+
+.documents-models-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.documents-models-heading h3,
+.documents-editor-heading h3 {
+    margin: 0;
+}
+
+.documents-models-heading p,
+.documents-editor-heading p {
+    margin-bottom: 0;
+}
+
+.document-manage-groups {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.document-model-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.document-model-actions button {
+    white-space: nowrap;
+}
+
+.document-filter-toolbar {
+    display: grid;
+    grid-template-columns:
+        minmax(220px, 1.4fr)
+        minmax(150px, 0.8fr)
+        minmax(150px, 0.8fr)
+        minmax(120px, 0.6fr)
+        auto;
+    gap: 10px;
+    align-items: end;
+}
+
+.document-filter-toolbar label,
+.document-model-select-field,
+.documents-editor label,
+.document-variables-grid label,
+.document-group-create-row label {
+    min-width: 0;
+}
+
+.document-filter-toolbar label > span,
+.document-model-select-field > span,
+.documents-editor label > span,
+.document-variables-grid label > span,
+.document-group-create-row label > span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.document-filter-toolbar input,
+.document-filter-toolbar select,
+.document-model-select-field select,
+.documents-editor input,
+.documents-editor select,
+.documents-editor textarea,
+.document-group-create-row input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.document-clear-filters {
+    min-height: 42px;
+    white-space: nowrap;
+}
+
+.document-model-select-field {
+    display: block;
+}
+
+.document-model-select-field select {
+    min-height: 44px;
+    font-weight: 600;
+}
+
+.documents-editor {
+    padding: 20px;
+}
+
+.document-editor-empty {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 280px;
+    padding: 28px;
+    text-align: center;
+    color: var(--muted-color, #607080);
+}
+
+.document-editor-empty[hidden] {
+    display: none;
+}
+
+.document-editor-empty strong {
+    color: var(--text-color, inherit);
+    font-size: 1.05rem;
+}
+
+.document-editor-empty p {
+    max-width: 430px;
+    margin: 8px auto 0;
+}
+
+.document-editor-content {
+    display: grid;
+    gap: 18px;
+}
+
+.document-editor-content[hidden] {
+    display: none;
+}
+
+.documents-editor-heading {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color, #d8e2ec);
+}
+
+.document-edit-section,
+.document-preview-section {
+    display: grid;
+    gap: 14px;
+}
+
+.document-model-meta-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(240px, 1.5fr)
+        minmax(150px, 0.75fr)
+        minmax(150px, 0.75fr);
+    gap: 12px;
+}
+
+.document-variables-card {
+    border: 1px solid var(--border-color, #d8e2ec);
+    border-radius: 12px;
+    background: color-mix(
+        in srgb,
+        var(--surface-color, #fff) 94%,
+        var(--primary-color, #0f4c81)
+    );
+    padding: 14px;
+}
+
+.document-variables-card .section-heading {
+    margin-bottom: 10px;
+}
+
+.document-variables-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.documents-editor textarea {
+    resize: vertical;
+}
+
+.documents-action-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color, #d8e2ec);
+}
+
+.documents-primary-actions,
+.documents-secondary-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.documents-panel .feedback-message {
+    min-height: 1.4em;
+    margin: 0;
+}
+
+/* Gerenciamento de grupos */
+.document-group-dialog {
+    width: min(620px, calc(100vw - 32px));
+    max-height: min(76vh, 680px);
+    padding: 0;
+    border: 1px solid var(--border-color, #d8e2ec);
+    border-radius: 16px;
+    background: var(--surface-color, #fff);
+    color: var(--text-color, inherit);
+    box-shadow: 0 22px 70px rgba(15, 31, 48, 0.25);
+}
+
+.document-group-dialog::backdrop {
+    background: rgba(15, 31, 48, 0.42);
+    backdrop-filter: blur(2px);
+}
+
+.document-group-dialog-card {
+    display: grid;
+    gap: 16px;
+    padding: 18px;
+}
+
+.document-group-dialog-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color, #d8e2ec);
+}
+
+.document-group-dialog-heading h3 {
+    margin: 2px 0 0;
+}
+
+.document-group-dialog-close {
+    align-self: flex-start;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 4px;
+}
+
+.document-group-create-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: end;
+}
+
+.document-group-create-row button {
+    min-height: 42px;
+}
+
+.document-group-list {
+    display: grid;
+    gap: 8px;
+    max-height: 330px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.document-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color, #d8e2ec);
+    border-radius: 10px;
+}
+
+.document-group-item-name {
+    min-width: 0;
+}
+
+.document-group-item-name strong,
+.document-group-item-name span {
+    display: block;
+}
+
+.document-group-item-name strong {
+    overflow-wrap: anywhere;
+}
+
+.document-group-item-name span {
+    margin-top: 2px;
+    color: var(--muted-color, #607080);
+    font-size: 0.8rem;
+}
+
+.document-group-item-actions {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 6px;
+}
+
+.document-group-item-actions button {
+    min-height: 34px;
+}
+
+.document-group-empty {
+    display: grid;
+    gap: 4px;
+    padding: 24px 10px;
+    text-align: center;
+    color: var(--muted-color, #607080);
+}
+
+@media (max-width: 760px) {
+    .documents-models-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .document-model-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1080px) {
+    .document-filter-toolbar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .document-search-field {
+        grid-column: 1 / -1;
+    }
+
+    .document-clear-filters {
+        justify-self: start;
+    }
+}
+
+@media (max-width: 850px) {
+    .documents-models-heading {
+        display: grid;
+    }
+
+    .document-manage-groups {
+        justify-self: start;
+    }
+
+    .document-model-meta-grid,
+    .document-variables-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .documents-panel .main-heading {
+        align-items: stretch;
+    }
+
+    .documents-panel #documentNewModel {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .document-filter-toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .document-search-field {
+        grid-column: auto;
+    }
+
+    .document-clear-filters {
+        width: 100%;
+    }
+
+    .documents-action-bar,
+    .documents-primary-actions,
+    .documents-secondary-actions {
+        align-items: stretch;
+    }
+
+    .documents-primary-actions,
+    .documents-secondary-actions {
+        width: 100%;
+    }
+
+    .documents-primary-actions button,
+    .documents-secondary-actions button {
+        flex: 1 1 auto;
+    }
+
+    .document-group-create-row {
+        grid-template-columns: 1fr;
+    }
+
+    .document-group-create-row button {
+        width: 100%;
+    }
+
+    .document-group-item {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .document-group-item-actions {
+        width: 100%;
+    }
+
+    .document-group-item-actions button {
+        flex: 1 1 auto;
+    }
+}

@@ -1,0 +1,36 @@
+/* =========================================================
+   Calculadora percentual — versão 1.8
+========================================================= */
+
+.percentual-results-grid {
+    margin-top: 18px;
+}
+
+.percentual-results-grid .result-box strong {
+    overflow-wrap: anywhere;
+}
+
+#percentualResultadoCompleto {
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+#percentualStatus.status-valid,
+#percentualResultadoResumo {
+    overflow-wrap: anywhere;
+}
+
+/* v4.3.6.1 — histórico com rolagem somente vertical */
+#percentualHistorico {
+    max-height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 0;
+}
+#percentualHistorico li,
+#percentualHistorico li * {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}

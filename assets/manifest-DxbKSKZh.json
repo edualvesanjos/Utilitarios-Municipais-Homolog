@@ -1,0 +1,11 @@
+{
+  "name": "Utilitários Municipais",
+  "short_name": "Utilitários",
+  "description": "Conjunto de ferramentas administrativas municipais.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#eef3f8",
+  "theme_color": "#0f4c81",
+  "lang": "pt-BR",
+  "version": "4.6.1.8"
+}

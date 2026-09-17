@@ -1,0 +1,159 @@
+.uvrm-entry-card,
+.uvrm-list-section {
+    border: 1px solid #dce4ec;
+    border-radius: 12px;
+    background: #fff;
+    padding: 18px;
+    margin-top: 18px
+}
+
+.optional-label {
+    font-weight: 400;
+    color: #718096
+}
+
+.preview-card small {
+    display: block;
+    margin-top: 8px;
+    color: #617184
+}
+
+.counter-badge {
+    border-radius: 999px;
+    background: #e8f4fb;
+    color: #0f4c81;
+    padding: 6px 10px;
+    font-size: .82rem;
+    font-weight: 700
+}
+
+.uvrm-current-list,
+.uvrm-operation-history {
+    display: grid;
+    gap: 10px
+}
+
+.uvrm-entry-row {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid #dce4ec;
+    border-radius: 10px;
+    padding: 12px;
+    background: #f8fafc
+}
+
+.uvrm-entry-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #0f4c81;
+    color: #fff;
+    font-weight: 700
+}
+
+.uvrm-entry-content {
+    display: grid;
+    gap: 4px
+}
+
+.uvrm-entry-content span,
+.uvrm-history-card span {
+    color: #617184;
+    font-size: .84rem
+}
+
+.uvrm-entry-value {
+    color: #0f4c81
+}
+
+.uvrm-entry-actions {
+    grid-column: 2/4;
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap
+}
+
+.small-button {
+    padding: 7px 10px;
+    font-size: .8rem
+}
+
+.uvrm-totals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #0f4c81;
+    color: #fff
+}
+
+.uvrm-totals strong {
+    font-size: 1.25rem
+}
+
+.uvrm-history-card {
+    display: grid;
+    gap: 10px;
+    border: 1px solid #dce4ec;
+    border-radius: 10px;
+    padding: 12px;
+    background: #fff
+}
+
+.uvrm-history-card>div:first-child {
+    display: grid;
+    gap: 3px
+}
+
+.uvrm-history-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap
+}
+
+@media(max-width:680px) {
+    .uvrm-entry-row {
+        grid-template-columns: 34px 1fr
+    }
+
+    .uvrm-entry-value {
+        grid-column: 2
+    }
+
+    .uvrm-entry-actions {
+        grid-column: 1/3
+    }
+
+    .uvrm-totals {
+        align-items: flex-start;
+        gap: 8px;
+        flex-direction: column
+    }
+}
+
+#uvrmMultiplicadorCampo .field-hint {
+    font-weight: 400;
+    color: #617184;
+    font-size: .78rem;
+    margin-top: 2px
+}
+/* v4.3.6.1 — histórico com rolagem somente vertical */
+#uvrmHistorico {
+    max-height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 0;
+}
+#uvrmHistorico .uvrm-history-card,
+#uvrmHistorico .uvrm-history-card * {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
