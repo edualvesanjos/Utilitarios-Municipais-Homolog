@@ -1,0 +1,283 @@
+.about-card {
+    display: grid;
+    gap: 20px
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px
+}
+
+.about-details {
+    margin: 0;
+    display: grid;
+    gap: 10px
+}
+
+.about-details div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--border-color, #d8e1ea)
+}
+
+.about-details dt {
+    color: var(--muted-color, #607080)
+}
+
+.about-details dd {
+    margin: 0;
+    font-weight: 700;
+    text-align: right
+}
+
+.about-list {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 9px
+}
+
+.about-modules {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.about-modules span {
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: var(--surface-muted, #eef4f8);
+    font-weight: 700
+}
+
+.about-timeline {
+    display: grid;
+    gap: 12px
+}
+
+.about-timeline article {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 14px;
+    padding: 12px;
+    border-left: 4px solid var(--primary-color, #0f4c81);
+    background: var(--surface-muted, #f5f8fb);
+    border-radius: 8px
+}
+
+.about-timeline p {
+    margin: 0
+}
+
+@media(max-width:760px) {
+    .about-grid {
+        grid-template-columns: 1fr
+    }
+
+    .about-details div {
+        align-items: flex-start
+    }
+
+    .about-timeline article {
+        grid-template-columns: 1fr
+    }
+}
+
+/* v4.4.6 — histórico de versões: somente rolagem vertical. */
+#sobre .about-timeline {
+    max-height: 28rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 0.5rem;
+    scrollbar-gutter: stable;
+}
+
+#sobre .about-timeline article {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+
+/* v4.5.0.4 DEV — Histórico de versões interativo */
+#sobre .about-timeline { display: grid; gap: 10px; }
+#sobre .about-version-item { min-width: 0; margin: 0; border: 1px solid var(--ux-border, #dbe5ee); border-radius: 12px; background: var(--ux-surface, #fff); overflow: hidden; }
+#sobre .about-version-toggle { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+#sobre .about-version-toggle:hover { background: color-mix(in srgb, var(--primary-color, #0f4c81) 6%, transparent); }
+#sobre .about-version-toggle:focus-visible { outline: 2px solid var(--primary-color, #0f4c81); outline-offset: -2px; }
+#sobre .about-version-heading { min-width: 0; display: grid; gap: 2px; }
+#sobre .about-version-heading strong { font-size: .95rem; }
+#sobre .about-version-heading span { color: var(--ux-muted, #5d6b78); font-size: .84rem; overflow-wrap: anywhere; }
+#sobre .about-version-chevron { flex: 0 0 auto; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: color-mix(in srgb, var(--primary-color, #0f4c81) 8%, transparent); transition: transform 160ms ease; }
+#sobre .about-version-item.is-open .about-version-chevron { transform: rotate(180deg); }
+#sobre .about-version-details { border-top: 1px solid var(--ux-border, #dbe5ee); padding: 12px 14px 14px; }
+#sobre .about-version-details[hidden] { display: none; }
+#sobre .about-version-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+#sobre .about-version-detail-grid section { min-width: 0; padding: 10px 12px; border-radius: 10px; background: color-mix(in srgb, var(--primary-color, #0f4c81) 4%, var(--ux-surface, #fff)); }
+#sobre .about-version-detail-grid h4 { margin: 0 0 6px; font-size: .86rem; }
+#sobre .about-version-detail-grid ul { margin: 0; padding-left: 18px; }
+#sobre .about-version-detail-grid li { margin: 3px 0; line-height: 1.4; overflow-wrap: anywhere; }
+@media (max-width: 720px) { #sobre .about-version-detail-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { #sobre .about-version-chevron { transition: none; } }
+
+
+/* v4.5.0.5 DEV — correção definitiva do Histórico de versões.
+   Neutraliza estilos legados de .about-timeline article que comprimiam
+   o cabeçalho da versão em uma coluna de 70px. */
+
+#sobre #aboutVersionHistory.about-timeline {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    max-height: 34rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2px 8px 2px 2px;
+    box-sizing: border-box;
+    scrollbar-gutter: stable;
+}
+
+#sobre #aboutVersionHistory .about-version-item {
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--ux-border, #dbe5ee);
+    border-left: 1px solid var(--ux-border, #dbe5ee);
+    border-radius: 12px;
+    background: var(--ux-surface, #ffffff);
+    overflow: hidden;
+    overflow-wrap: normal;
+    box-sizing: border-box;
+}
+
+#sobre #aboutVersionHistory .about-version-toggle {
+    width: 100%;
+    min-width: 0;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 13px 16px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#sobre #aboutVersionHistory .about-version-item.is-open .about-version-toggle {
+    background: color-mix(
+        in srgb,
+        var(--primary-color, #0f4c81) 5%,
+        var(--ux-surface, #ffffff)
+    );
+}
+
+#sobre #aboutVersionHistory .about-version-heading {
+    min-width: 0;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    line-height: 1.3;
+}
+
+#sobre #aboutVersionHistory .about-version-heading strong {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.96rem;
+    line-height: 1.3;
+}
+
+#sobre #aboutVersionHistory .about-version-heading span {
+    min-width: 0;
+    color: var(--ux-muted, #5d6b78);
+    font-size: 0.85rem;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+#sobre #aboutVersionHistory .about-version-chevron {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+}
+
+#sobre #aboutVersionHistory .about-version-details {
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+    border-top: 1px solid var(--ux-border, #dbe5ee);
+    box-sizing: border-box;
+}
+
+#sobre #aboutVersionHistory .about-version-detail-grid {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 12px;
+}
+
+#sobre #aboutVersionHistory .about-version-detail-grid section {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#sobre #aboutVersionHistory .about-version-detail-grid h4,
+#sobre #aboutVersionHistory .about-version-detail-grid li {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+#sobre #aboutVersionHistory .about-version-detail-grid ul {
+    padding-left: 20px;
+}
+
+@media (max-width: 760px) {
+    #sobre #aboutVersionHistory .about-version-item {
+        display: block;
+        grid-template-columns: none;
+    }
+
+    #sobre #aboutVersionHistory .about-version-heading {
+        display: grid;
+        gap: 3px;
+    }
+
+    #sobre #aboutVersionHistory .about-version-detail-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    #sobre #aboutVersionHistory.about-timeline {
+        max-height: 30rem;
+        padding-right: 4px;
+    }
+
+    #sobre #aboutVersionHistory .about-version-toggle {
+        padding: 12px;
+    }
+
+    #sobre #aboutVersionHistory .about-version-details {
+        padding: 12px;
+    }
+}

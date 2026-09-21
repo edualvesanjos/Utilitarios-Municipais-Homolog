@@ -1,0 +1,118 @@
+/* Componentes compartilhados.
+   Arquivo reservado para a próxima etapa de consolidação visual. */
+
+
+/* Navegação de retorno ao dashboard */
+
+.tab-footer-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid #dfe6ee;
+}
+
+.back-home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 260px;
+    border: 1px solid #b8ccde;
+    border-radius: 10px;
+    background: #f7fafc;
+    color: #0f4c81;
+    padding: 12px 18px;
+    font-weight: 800;
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.back-home-button:hover {
+    transform: translateY(-1px);
+    border-color: #7da9cc;
+    background: #edf5fb;
+    box-shadow: 0 8px 18px rgba(15, 76, 129, 0.1);
+}
+
+.back-home-button span {
+    font-size: 1.15rem;
+}
+
+@media (max-width: 640px) {
+    .back-home-button {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+
+/* Componentes reutilizáveis — versão 2.2 */
+
+.toast[data-type="success"] {
+    border-left: 4px solid #2e7d32;
+}
+
+.toast[data-type="error"] {
+    border-left: 4px solid #b3261e;
+}
+
+.toast[data-type="warning"] {
+    border-left: 4px solid #a15c00;
+}
+
+.confirm-dialog-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.55);
+}
+
+.confirm-dialog-overlay[hidden] {
+    display: none;
+}
+
+.confirm-dialog {
+    width: min(100%, 460px);
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 24px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.25);
+}
+
+.confirm-dialog h2 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+}
+
+.confirm-dialog p {
+    margin: 0;
+    line-height: 1.55;
+}
+
+.confirm-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 520px) {
+    .confirm-dialog-actions {
+        flex-direction: column-reverse;
+    }
+
+    .confirm-dialog-actions button {
+        width: 100%;
+    }
+}

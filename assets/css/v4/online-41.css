@@ -1,0 +1,180 @@
+
+/* Versão 4.1 — conta e sincronização online. */
+.online-settings-card { border-left: 4px solid var(--ux-accent, #0f4c81); }
+.online-account-summary { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:16px 0; }
+.online-account-summary > div { padding:12px; border:1px solid var(--border-color,#d9e2ec); border-radius:10px; background:var(--surface-soft,#f7f9fc); }
+.online-account-summary span { display:block; font-size:.82rem; color:var(--text-muted,#617184); margin-bottom:4px; }
+.online-account-summary strong { word-break:break-word; }
+.online-status-badge { display:inline-flex; align-items:center; padding:6px 10px; border-radius:999px; font-size:.8rem; font-weight:700; background:#eef2f7; color:#475569; }
+.online-status-badge[data-state="online"] { background:#dcfce7; color:#166534; }
+.online-status-badge[data-state="offline"] { background:#fef3c7; color:#92400e; }
+.online-modal[hidden] { display:none; }
+.online-modal { position:fixed; inset:0; z-index:10000; display:grid; place-items:center; padding:20px; background:rgba(15,23,42,.58); }
+.online-modal-dialog { position:relative; width:min(460px,100%); background:var(--card-bg,#fff); color:var(--text-color,#172033); border-radius:16px; padding:24px; box-shadow:0 24px 70px rgba(0,0,0,.28); }
+.online-modal-dialog label { display:grid; gap:6px; margin:14px 0; font-weight:700; }
+.online-modal-dialog input { width:100%; padding:11px 12px; border:1px solid var(--border-color,#cbd5e1); border-radius:9px; background:var(--input-bg,#fff); color:inherit; }
+.online-modal-close { position:absolute; top:10px; right:12px; border:0; background:transparent; color:inherit; font-size:1.6rem; cursor:pointer; }
+@media (max-width:640px) { .online-account-summary { grid-template-columns:1fr; } }
+
+/* Versão 4.2.4 — gerenciamento da sincronização. */
+.online-status-detail { margin:8px 0 0; color:var(--text-muted,#617184); }
+.online-status-badge[data-state="syncing"] { background:#dbeafe; color:#1d4ed8; }
+.online-status-badge[data-state="pending"] { background:#fef3c7; color:#92400e; }
+.online-status-badge[data-state="conflict"] { background:#fee2e2; color:#991b1b; }
+.online-status-badge[data-state="error"] { background:#fee2e2; color:#991b1b; }
+.online-conflict-options { display:grid; gap:10px; margin:18px 0 12px; }
+.online-conflict-options button { display:grid; gap:4px; text-align:left; padding:14px; }
+.online-conflict-options button span { font-size:.84rem; font-weight:400; opacity:.88; }
+
+
+.dashboard-greeting-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.home-sync-badge {
+    flex: 0 0 auto;
+    font-size: .78rem;
+    cursor: help;
+}
+@media(max-width:600px) {
+    .dashboard-greeting-line { align-items: flex-start; }
+}
+
+/* Versão 4.3.1 — identidade da conta no cabeçalho e estado técnico no rodapé. */
+.header-content-v32 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+.header-account { position: relative; flex: 0 0 auto; }
+.header-account-button {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 42px;
+    padding: 6px 10px;
+    border: 1px solid var(--border-color,#d9e2ec);
+    border-radius: 10px;
+    background: var(--card-bg,#fff);
+    color: inherit;
+    text-align: left;
+}
+.header-account-button:hover { background: var(--surface-soft,#f7f9fc); }
+.header-account-copy { display: grid; gap: 1px; min-width: 0; }
+.header-account-copy strong { max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .86rem; }
+.header-account-copy small { color: var(--text-muted,#617184); font-size: .7rem; }
+.header-account-chevron { color: var(--text-muted,#617184); }
+.header-account-dot,.footer-sync-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #94a3b8;
+    box-shadow: 0 0 0 3px rgba(148,163,184,.15);
+    flex: 0 0 auto;
+}
+.header-account-dot[data-state="online"],.footer-sync-dot[data-state="online"] { background:#16a34a; box-shadow:0 0 0 3px rgba(22,163,74,.14); }
+.header-account-dot[data-state="offline"],.footer-sync-dot[data-state="offline"],.footer-sync-dot[data-state="pending"] { background:#d97706; box-shadow:0 0 0 3px rgba(217,119,6,.14); }
+.footer-sync-dot[data-state="syncing"] { background:#2563eb; box-shadow:0 0 0 3px rgba(37,99,235,.14); }
+.footer-sync-dot[data-state="conflict"],.footer-sync-dot[data-state="error"] { background:#dc2626; box-shadow:0 0 0 3px rgba(220,38,38,.14); }
+.header-account-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 1800;
+    width: min(320px, calc(100vw - 24px));
+    padding: 14px;
+    border: 1px solid var(--border-color,#d9e2ec);
+    border-radius: 12px;
+    background: var(--card-bg,#fff);
+    color: var(--text-color,#172033);
+    box-shadow: 0 18px 45px rgba(15,23,42,.18);
+}
+.header-account-identity { display:grid; gap:4px; padding-bottom:12px; border-bottom:1px solid var(--border-color,#e2e8f0); }
+.header-account-identity strong,.header-account-identity small { overflow-wrap:anywhere; }
+.header-account-identity small { color:var(--text-muted,#617184); }
+.header-account-menu-status { display:flex; align-items:center; gap:9px; padding:11px 0; font-size:.84rem; font-weight:700; }
+.header-account-menu-actions { display:grid; gap:6px; }
+.header-account-menu-actions button { width:100%; text-align:left; border:0; border-radius:8px; padding:9px 10px; background:transparent; color:inherit; }
+.header-account-menu-actions button:hover { background:var(--surface-soft,#f1f5f9); }
+.header-account-menu-actions .header-signout { color:#b42318; }
+.header-account-menu-actions .header-signin { background:var(--ux-accent,#0f4c81); color:#fff; text-align:center; font-weight:700; }
+.app-footer-content { width:min(1500px,calc(100% - 32px)); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.app-footer-content p { margin:0; }
+.footer-sync-status { display:flex; align-items:center; justify-content:flex-end; gap:8px; color:var(--text-muted,#617184); font-size:.78rem; }
+.footer-sync-status strong { color:var(--text-color,#172033); }
+@media(max-width:700px) {
+    .header-content-v32 { width:min(100% - 20px,1500px); }
+    .header-account-copy small { display:none; }
+    .header-account-copy strong { max-width:110px; }
+    .app-footer-content { width:100%; flex-direction:column; align-items:flex-start; }
+    .footer-sync-status { flex-wrap:wrap; justify-content:flex-start; }
+}
+
+/* v4.3.5.1 — botões de conta/sincronização com altura uniforme */
+#onlineSettingsPanel .actions { align-items: stretch; }
+#onlineSettingsPanel .actions button { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; }
+
+/* v4.3.5.2 — ações de conta alinhadas horizontalmente */
+#onlineSettingsPanel .online-account-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+#onlineSettingsPanel .online-account-actions > button {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 44px;
+}
+@media (max-width: 900px) {
+    #onlineSettingsPanel .online-account-actions {
+        flex-wrap: wrap;
+    }
+    #onlineSettingsPanel .online-account-actions > button {
+        flex: 1 1 220px;
+    }
+}
+
+/* v4.3.5.3 */
+#onlineSettingsPanel #onlineAccountActions { display:grid !important; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; align-items:stretch; }
+#onlineSettingsPanel #onlineAccountActions > button { width:100%; min-width:0; min-height:44px; margin:0; }
+#onlineSettingsPanel #onlineResolveConflict:not([hidden]) { grid-column:1 / -1; }
+@media (max-width:900px){ #onlineSettingsPanel #onlineAccountActions{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+/* Infraestrutura de ambientes — v4.3.6 */
+.app-environment-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 22px;
+    padding: 2px 7px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+}
+.app-environment-badge[data-environment="development"] {
+    opacity: .82;
+}
+.app-environment-badge[data-environment="production"] {
+    opacity: .72;
+}
+
+/* v4.3.6.1 — DEV deve ser um alerta visual; produção não exibe badge */
+.app-environment-badge[data-environment="development"]{
+    background:#b42318;
+    color:#fff;
+    border-color:#b42318;
+    opacity:1;
+    min-height:30px;
+    padding:4px 11px;
+    font-size:.85rem;
+    font-weight:900;
+    box-shadow:0 1px 4px rgba(0,0,0,.18);
+}
+.app-environment-badge[data-environment="production"]{display:none!important}

@@ -1,0 +1,58 @@
+.version-badge.v3 {
+    background: linear-gradient(135deg, #0f4c81, #1670b7)
+}
+
+.dashboard-category-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 18px
+}
+
+.category-filter {
+    border: 1px solid var(--border-color, #ccd8e3);
+    background: #fff;
+    color: #34495e;
+    padding: 8px 13px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.category-filter.active {
+    background: #0f4c81;
+    color: #fff;
+    border-color: #0f4c81
+}
+
+.tool-category-label {
+    display: block;
+    margin-top: 7px;
+    color: #60758a;
+    font-size: .72rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em
+}
+
+.architecture-status {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border: 1px solid #cfe0ef;
+    border-radius: 12px;
+    background: #f5f9fc;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap
+}
+
+.architecture-status strong {
+    color: #0f4c81
+}
+
+.architecture-status span {
+    font-size: .85rem;
+    color: #52667a
+}

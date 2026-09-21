@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f4c81">
+    <title>Utilitários Municipais</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%232563eb'/><text x='32' y='42' text-anchor='middle' font-family='Arial' font-size='34' font-weight='bold' fill='white'>UM</text></svg>">
+    <link rel="manifest" href="./assets/manifest-C9R4FTMC.json">
+  <script type="module" crossorigin src="./assets/index-c2ETPTHv.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D4ZC-tLt.css">
+</head>
+<body>
+    <header class="app-header app-header-v32">
+        <div class="header-content header-content-v32">
+            <div class="v32-brand">
+                <span class="v32-brand-icon" aria-hidden="true">🏛</span>
+                <div><h1 data-app-name>Utilitários Municipais</h1><small>Ferramentas internas</small></div>
+                <span class="v32-version">v<span data-app-version></span></span><span id="appEnvironmentBadge" class="app-environment-badge" hidden></span>
+            </div>
+
+            <div class="header-account v45-header-account" id="headerAccount">
+                <button id="headerAccountButton" class="header-account-button v45-header-account-button"
+                    type="button" aria-haspopup="true" aria-expanded="false"
+                    aria-controls="headerAccountMenu" title="Conta e sincronização"
+                    aria-label="Conta e sincronização">
+                    <span class="v45-profile-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0v1H5v-1Z"></path>
+                        </svg>
+                        <span id="headerAccountDot" class="header-account-dot"
+                            data-state="local" aria-hidden="true"></span>
+                    </span>
+                </button>
+
+                <div id="headerAccountMenu" class="header-account-menu v45-header-account-menu" hidden>
+                    <div class="header-account-identity">
+                        <span class="eyebrow">Conta</span>
+                        <strong id="headerAccountMenuName">Não conectado</strong>
+                        <small id="headerAccountEmail">Use o armazenamento local ou entre em uma conta.</small>
+                    </div>
+                    <div class="header-account-menu-status">
+                        <span id="headerMenuStatusDot" class="header-account-dot"
+                            data-state="local" aria-hidden="true"></span>
+                        <span id="headerMenuStatusText">Somente local</span>
+                    </div>
+                    <div class="header-account-menu-actions" data-header-authenticated hidden>
+                        <button id="headerAccountSettings" type="button">Conta e sincronização</button>
+                        <button id="headerSyncNow" type="button">Sincronizar agora</button>
+                        <button id="headerSignOut" class="header-signout" type="button">Sair da conta</button>
+                    </div>
+                    <div class="header-account-menu-actions" data-header-anonymous>
+                        <button id="headerSignIn" class="header-signin" type="button">Entrar ou criar conta</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="v45MobileMenuButton" class="v45-mobile-menu-button" type="button"
+                aria-label="Abrir menu" aria-controls="v45Sidebar" aria-expanded="false">
+                <span aria-hidden="true">☰</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="app-container">
+
+        <nav id="v45Sidebar" class="tabs ux-main-navigation v45-sidebar" aria-label="Navegação principal">
+            <div class="v45-sidebar-top">
+                <button id="v45SidebarCollapse" class="v45-sidebar-collapse" type="button"
+                    aria-label="Recolher menu" title="Recolher menu" aria-pressed="false">
+                    <span class="v45-collapse-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M14.5 6.5 9 12l5.5 5.5"></path>
+                            <path d="M19 4v16"></path>
+                        </svg>
+                    </span>
+                    <span class="v45-collapse-label">Recolher</span>
+                </button>
+            </div>
+
+            <div class="v45-sidebar-search">
+                <label class="v32-top-search">
+                    <span class="nav-svg-icon" data-static-icon="search" aria-hidden="true"></span>
+                    <input id="dashboardToolSearch" type="search" autocomplete="off" placeholder="Pesquisar ferramentas...">
+                    <kbd>Ctrl + K</kbd>
+                    <div id="dashboardSearchResults" class="dashboard-search-results" aria-live="polite"></div>
+                </label>
+            </div>
+
+            <div class="v45-sidebar-scroll">
+                <section class="v45-nav-section">
+                    <button class="tab-button ux-nav-primary active" type="button" data-tab="inicio">
+                        <span class="menu-tool-icon" data-tool-icon="home"></span>
+                        <span>Início</span>
+                    </button>
+                </section>
+
+                <section class="v45-nav-section">
+                    <strong class="v45-nav-heading">Documentos</strong>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="central-documentos">
+                        <span class="menu-tool-icon" data-tool-icon="documents"></span>
+                        <span>Central de documentos</span>
+                    </button>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="arquivo">
+                        <span class="menu-tool-icon" data-tool-icon="file"></span>
+                        <span>Nome de arquivo</span>
+                    </button>
+                </section>
+
+                <section class="v45-nav-section">
+                    <strong class="v45-nav-heading">Cadastros</strong>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="inscricao">
+                        <span class="menu-tool-icon" data-tool-icon="building"></span>
+                        <span>Inscrição imobiliária</span>
+                    </button>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="cpf-cnpj">
+                        <span class="menu-tool-icon" data-tool-icon="idcard"></span>
+                        <span>CPF / CNPJ</span>
+                    </button>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="lote">
+                        <span class="menu-tool-icon" data-tool-icon="grid"></span>
+                        <span>Número de lote</span>
+                    </button>
+                </section>
+
+                <section class="v45-nav-section">
+                    <strong class="v45-nav-heading">Cálculos</strong>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="uvrm">
+                        <span class="menu-tool-icon" data-tool-icon="coins"></span>
+                        <span>Calculadora UVRM</span>
+                    </button>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="percentual">
+                        <span class="menu-tool-icon" data-tool-icon="percent"></span>
+                        <span>Percentual</span>
+                    </button>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="datas">
+                        <span class="menu-tool-icon" data-tool-icon="calendar"></span>
+                        <span>Datas</span>
+                    </button>
+                </section>
+
+                <section class="v45-nav-section">
+                    <strong class="v45-nav-heading">Produtividade</strong>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="biblioteca">
+                        <span class="menu-tool-icon" data-tool-icon="library"></span>
+                        <span>Biblioteca</span>
+                    </button>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="historico-global">
+                        <span class="menu-tool-icon" data-tool-icon="history"></span>
+                        <span>Histórico global</span>
+                    </button>
+                </section>
+
+                <section class="v45-nav-section">
+                    <strong class="v45-nav-heading">Sistema</strong>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="configuracoes">
+                        <span class="menu-tool-icon" data-tool-icon="settings"></span>
+                        <span>Configurações</span>
+                    </button>
+                    <button class="tab-button ux-nav-primary" type="button" data-tab="sobre">
+                        <span class="menu-tool-icon" data-tool-icon="info"></span>
+                        <span>Sobre</span>
+                    </button>
+                </section>
+            </div>
+
+            <div class="v45-sidebar-footer">
+                <div class="v32-header-actions" aria-label="Ações de aparência">
+                    <button id="v32ThemeToggle" type="button" title="Alternar tema">
+                        <span aria-hidden="true">◐</span>
+                        <span class="v45-footer-label">Tema</span>
+                    </button>
+                    <button id="v32FontToggle" type="button" title="Alternar tamanho da fonte">
+                        <span aria-hidden="true">Aᴬ</span>
+                        <span class="v45-footer-label">Fonte</span>
+                    </button>
+                </div>
+            </div>
+
+        </nav>
+
+        <div id="v45SidebarBackdrop" class="v45-sidebar-backdrop" hidden></div>
+
+        <section id="inicio" class="tab-panel active v32-dashboard">
+            <div class="v32-dashboard-grid">
+                <main class="v32-dashboard-main">
+                    <section class="v32-welcome card">
+                        <div><div class="dashboard-greeting-line"><span class="eyebrow">Painel principal</span></div><h2 id="dashboardGreeting">Olá, Usuário!</h2><p>Bem-vindo aos Utilitários Municipais.</p><p>Use a pesquisa, a paleta de comandos (<strong>Ctrl + Espaço</strong>) ou acesse uma ferramenta abaixo.</p></div>
+                        <div class="v32-welcome-art" aria-hidden="true"><span>▥</span><span>▦</span><span>⌨</span></div>
+                    </section>
+
+                    <section class="v32-section card" id="dashboardFavoritesSection">
+                        <div class="section-heading"><div><h3>Acesso rápido</h3><p class="mini-description">Favoritos e ferramentas disponíveis.</p></div><button class="text-button" type="button" id="v32ShowAllTools">Ver todas</button></div>
+                        <div id="dashboardFavoriteTools" class="dashboard-tools dashboard-favorite-tools"></div>
+                        <div id="dashboardAllTools" class="dashboard-tools v32-all-tools" aria-label="Ferramentas disponíveis"></div>
+                    </section>
+
+                    <section class="v32-section card">
+                        <div class="section-heading"><div><h3>Continuar de onde parou</h3><p class="mini-description">Ferramentas utilizadas recentemente.</p></div></div>
+                        <div id="dashboardRecentTools" class="dashboard-smart-tools v32-recent-tools"></div>
+                        <div id="dashboardMostUsedTools" class="dashboard-smart-tools" hidden></div>
+                    </section>
+
+                    <section class="v32-section card dashboard-recent-card">
+                        <div class="section-heading"><div><h3>Atividades recentes</h3><p class="mini-description">Últimos cálculos e ações armazenados neste navegador.</p></div><button id="dashboardRefresh" class="text-button" type="button">Atualizar</button></div>
+                        <ul id="dashboardRecentList" class="dashboard-recent-list"></ul>
+                    </section>
+
+                    <div class="dashboard-summary-grid v32-hidden-data" hidden>
+                        <span id="dashboardFileModels">0</span><span id="dashboardFileHistory">0</span><span id="dashboardRegistrationHistory">0</span><span id="dashboardLotHistory">0</span><span id="dashboardUvrmHistory">0</span><span id="dashboardPercentageHistory">0</span><span id="dashboardNextLotSequence">1</span><span id="dashboardUvrmValue">R$ 0,00</span><span id="dashboardLastBackup">Nenhum</span>
+                    </div>
+                    <div id="dashboardToolCategories" hidden></div>
+                </main>
+
+                <aside class="v32-dashboard-side">
+                    <section class="card v32-side-card">
+                        <div class="section-heading"><h3>Indicadores</h3><small>Dados locais</small></div>
+                        <div class="v32-indicators">
+                            <div><span class="v32-indicator-icon">▣</span><p>Ferramentas disponíveis<strong id="v32ToolCount">0</strong></p></div>
+                            <div><span class="v32-indicator-icon">★</span><p>Favoritos<strong id="dashboardFavoriteCount">0</strong></p></div>
+                            <div><span class="v32-indicator-icon">▦</span><p>Ações realizadas<strong id="dashboardTotalActions">0</strong></p></div>
+                            <div><span class="v32-indicator-icon">↗</span><p>Acessos aos módulos<strong id="dashboardTotalAccesses">0</strong></p></div>
+                        </div>
+                        <p class="v32-most-used">Mais utilizada: <strong id="dashboardMostUsedTool">Nenhuma</strong></p>
+                    </section>
+                    <section class="card v32-side-card"><div class="section-heading"><h3>Atalhos de teclado</h3></div><dl class="v32-shortcuts"><div><dt>Ctrl + Espaço</dt><dd>Paleta de comandos</dd></div><div><dt>Ctrl + K</dt><dd>Pesquisar</dd></div><div><dt>F1</dt><dd>Ajuda</dd></div><div><dt>Esc</dt><dd>Fechar pesquisa</dd></div></dl></section>
+                    <section class="card v32-side-card"><div class="section-heading"><h3>Dica rápida</h3></div><p id="v32Tip">Marque as ferramentas mais utilizadas como favoritas para encontrá-las no acesso rápido.</p></section>
+                    <section class="card v32-side-card v32-storage-card"><div class="section-heading"><h3>Dados do sistema</h3></div><p>Armazenamento local ativo</p><p>Último backup: <strong id="v32LastBackup">Nenhum backup</strong></p></section>
+                </aside>
+            </div>
+        </section>
+        <section id="arquivo" class="tab-panel">
+            <div class="card">
+                <div class="section-heading main-heading">
+                    <div>
+                        <h2>Montador de nome de arquivo</h2>
+                        <p class="section-description">
+                            Ative, desative e reorganize os blocos que formarão o nome final.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="generator-grid">
+                    <section class="builder-panel">
+                        <h3>Dados do arquivo</h3>
+
+                        <div class="grid two-columns">
+                            <label>
+                                Nome
+                                <input id="arquivoNome" type="text" placeholder="Ex.: Nome da Pessoa ou Razão Social">
+                            </label>
+
+                            <label>
+                                Número do processo
+                                <input id="arquivoProcesso" type="text" placeholder="Ex.: 22667/2026">
+                            </label>
+                        </div>
+
+                        <div class="grid two-columns">
+                            <label>
+                                Prefixo
+                                <input id="arquivoPrefixo" type="text" placeholder="Ex.: DAE">
+                            </label>
+
+                            <label>
+                                Separador
+                                <select id="arquivoSeparador">
+                                    <option value="_">Sublinhado (_)</option>
+                                    <option value="-">Hífen (-)</option>
+                                    <option value=".">Ponto (.)</option>
+                                    <option value=" ">Espaço</option>
+                                    <option value="">Sem separador</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="options-panel">
+                                <label class="checkbox-row">
+                                    <input id="arquivoRemoverPontos" type="checkbox" checked>
+                                    Remover pontos (.) dos números
+                                </label>
+
+                            <label class="checkbox-row">
+                                <input id="arquivoAnaliseProjeto" type="checkbox">
+                                Análise de projeto
+                            </label>
+
+                            <label class="checkbox-row">
+                                <input id="arquivoDataHora" type="checkbox">
+                                Incluir data/hora
+                            </label>
+                        </div>
+
+                        <div class="preview-card">
+                            <span>Pré-visualização</span>
+                            <strong id="arquivoPreview">—</strong>
+                        </div>
+
+                        <div class="actions">
+                            <button id="copiarArquivoPreview" class="primary">Copiar nome</button>
+                            <button id="salvarModeloArquivo" class="secondary">Salvar modelo</button>
+                            <button id="limparArquivo" class="secondary">Limpar campos</button>
+                        </div>
+
+                        <p id="arquivoMensagem" class="feedback" aria-live="polite"></p>
+
+                        <div class="builder-section">
+                            <div class="section-heading">
+                                <div>
+                                    <h3>Blocos disponíveis</h3>
+                                    <p class="mini-description">
+                                        Marque os blocos que devem compor o nome.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div id="arquivoBlocosDisponiveis" class="available-blocks"></div>
+                        </div>
+
+                        <div class="builder-section">
+                            <div class="section-heading">
+                                <div>
+                                    <h3>Ordem dos blocos</h3>
+                                    <p class="mini-description">
+                                        Use os botões para reorganizar.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <ol id="arquivoOrdemBlocos" class="block-order-list"></ol>
+                        </div>
+
+            <div class="tab-footer-navigation">
+                <button class="back-home-button" type="button" data-open-tab="inicio">
+                    <span aria-hidden="true">←</span>
+                    Voltar para a Página Inicial
+                </button>
+            </div>
+        </section>
+
+                    <aside class="generator-sidebar">
+                        <section class="sidebar-card">
+                            <div class="section-heading">
+                                <h3>Modelos salvos</h3>
+                                <button id="limparModelosArquivo" class="text-button">Limpar</button>
+                            </div>
+
+                            <label class="compact-field">
+                                Nome do modelo
+                                <input id="arquivoNomeModelo" type="text" placeholder="Ex.: Análise de projeto">
+                            </label>
+
+                            <ul id="arquivoModelos" class="history-list compact-list">
+                                <li class="empty-state">Nenhum modelo salvo.</li>
+                            </ul>
+                        </section>
+
+                        <section class="sidebar-card">
+                            <div class="section-heading">
+                                <h3>Histórico recente</h3>
+                            </div>
+
+                            <ul id="arquivoHistorico" class="history-list compact-list">
+                                <li class="empty-state">Nenhum nome copiado recentemente.</li>
+                            </ul>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="inscricao" class="tab-panel">
+            <div class="card">
+                <div class="section-heading main-heading">
+                    <div>
+                        <h2>Padrão de inscrição imobiliária</h2>
+                        <p class="section-description">
+                            Cole ou digite a inscrição em qualquer formato; o sistema identifica e normaliza automaticamente.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="registration-layout">
+                    <section class="registration-panel">
+                        <div class="registration-type-selector" role="radiogroup" aria-label="Tipo de inscrição">
+                            <label class="registration-type-option">
+                                <input type="radio" name="inscricaoTipo" value="auto" checked>
+                                <span>Detectar automaticamente</span>
+                            </label>
+
+                            <label class="registration-type-option">
+                                <input type="radio" name="inscricaoTipo" value="urbano">
+                                <span>Urbano</span>
+                            </label>
+
+                            <label class="registration-type-option">
+                                <input type="radio" name="inscricaoTipo" value="itr">
+                                <span>ITR</span>
+                            </label>
+                        </div>
+
+                        <label>
+                            Inscrição
+                            <input
+                                id="inscricaoValor"
+                                type="text"
+                                inputmode="numeric"
+                                autocomplete="off"
+                                placeholder="Cole ou digite a inscrição"
+                            >
+                        </label>
+
+                        <div class="registration-status">
+                            <div>
+                                <span class="status-label">Tipo identificado</span>
+                                <strong id="inscricaoTipoDetectado">Aguardando</strong>
+                            </div>
+
+                            <div>
+                                <span class="status-label">Quantidade de números</span>
+                                <strong id="inscricaoContagem">0</strong>
+                            </div>
+
+                            <div>
+                                <span class="status-label">Situação</span>
+                                <strong id="inscricaoStatus">Aguardando</strong>
+                            </div>
+                        </div>
+
+                        <p id="inscricaoAjuda" class="help-text">
+                            O padrão urbano possui 17 números e o ITR possui 13 números.
+                        </p>
+
+                        <div class="preview-card registration-preview">
+                            <span>Inscrição normalizada</span>
+                            <strong id="inscricaoPreview">—</strong>
+                        </div>
+
+                        <div class="actions">
+                            <button id="copiarInscricao" class="primary">Copiar inscrição</button>
+                            <button id="copiarInscricaoSemMascara" class="secondary">Copiar somente números</button>
+                            <button id="limparInscricao" class="secondary">Limpar</button>
+                        </div>
+
+                        <label class="checkbox-row registration-auto-copy">
+                            <input id="inscricaoCopiaAutomatica" type="checkbox">
+                            Copiar automaticamente quando a inscrição estiver completa
+                        </label>
+
+            <div class="tab-footer-navigation">
+                <button class="back-home-button" type="button" data-open-tab="inicio">
+                    <span aria-hidden="true">←</span>
+                    Voltar para a Página Inicial
+                </button>
+            </div>
+        </section>
+
+                    <aside class="generator-sidebar">
+                        <section class="sidebar-card">
+                            <div class="section-heading">
+                                <h3>Histórico recente</h3>
+                            </div>
+
+                            <ul id="inscricaoHistorico" class="history-list compact-list">
+                                <li class="empty-state">Nenhuma inscrição copiada recentemente.</li>
+                            </ul>
+                        </section>
+
+                        <section class="sidebar-card">
+                            <h3>Formatos aceitos</h3>
+
+                            <div class="format-examples">
+                                <div>
+                                    <span>Urbano</span>
+                                    <code>00.000.000.00.0000000</code>
+                                </div>
+
+                                <div>
+                                    <span>ITR</span>
+                                    <code>000.000.000.000-0</code>
+                                </div>
+                            </div>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="cpf-cnpj" class="tab-panel">
+            <div class="card">
+                <div class="section-heading main-heading">
+                    <div>
+                        <h2>CPF / CNPJ</h2>
+                        <p class="section-description">Normalize, valide e copie CPF, CNPJ numérico e CNPJ alfanumérico com máscaras automáticas.</p>
+                    </div>
+                </div>
+                <div class="generator-grid">
+                    <section class="builder-panel">
+                        <div class="registration-type-selector" role="radiogroup" aria-label="Tipo de documento">
+                            <label class="registration-type-option">
+                                <input type="radio" name="documentoFiscalTipo" value="auto" checked>
+                                <span>Detectar automaticamente</span>
+                            </label>
+                            <label class="registration-type-option">
+                                <input type="radio" name="documentoFiscalTipo" value="cnpj">
+                                <span>CNPJ</span>
+                            </label>
+                            <label class="registration-type-option">
+                                <input type="radio" name="documentoFiscalTipo" value="cpf">
+                                <span>CPF</span>
+                            </label>
+                        </div>
+                        <label>CPF ou CNPJ
+                            <input id="documentoFiscalEntrada" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="18" placeholder="Digite ou cole o CPF/CNPJ">
+                        </label>
+                        <div class="document-copy-options">
+                            <label class="checkbox-row"><input id="documentoFiscalAutoCopy" type="checkbox"> Copiar automaticamente</label>
+                            <label class="checkbox-row"><input id="documentoFiscalSemMascara" type="checkbox"> Sem máscara</label>
+                        </div>
+                        <div class="registration-status">
+                            <div><span class="status-label">Tipo detectado</span><strong id="documentoFiscalTipoDetectado">—</strong></div>
+                            <div><span class="status-label">Situação</span><strong id="documentoFiscalStatus">Aguardando</strong></div>
+                        </div>
+                        <div class="result-box"><span>Documento normalizado</span><strong id="documentoFiscalResultado">—</strong></div>
+                        <p id="documentoFiscalFeedback" class="feedback-message" aria-live="polite"></p>
+                        <div class="actions">
+                            <button id="copiarDocumentoFiscal" class="primary" type="button" disabled>Copiar</button>
+                            <button id="limparDocumentoFiscal" class="secondary" type="button">Limpar</button>
+                        </div>
+                    </section>
+                    <aside class="generator-sidebar">
+                        <section class="sidebar-card">
+                            <div class="section-heading"><h3>Histórico local</h3></div>
+                            <ul id="documentoFiscalHistorico" class="history-list compact-list"><li class="empty-state">Nenhum documento normalizado recentemente.</li></ul>
+                        </section>
+                        <section class="sidebar-card">
+                            <h3>Formatos</h3>
+                            <div class="format-examples">
+                                <div><span>CPF</span><code>000.000.000-00</code></div>
+                                <div><span>CNPJ numérico</span><code>00.000.000/0000-00</code></div>
+                                <div><span>CNPJ alfanumérico</span><code>AA.AAA.AAA/AAAA-00</code></div>
+                            </div>
+                        </section>
+                    </aside>
+                </div>
+                <div class="tab-footer-navigation">
+                    <button class="back-home-button" type="button" data-open-tab="inicio"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="lote" class="tab-panel">
+            <div class="card">
+                <div class="section-heading main-heading">
+                    <div>
+                        <h2>Gerador de número de lote</h2>
+                        <p class="section-description">
+                            Gere um ou vários números de lote com controle da sequência inicial e histórico local.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="generator-grid">
+                    <section class="builder-panel">
+                        <div class="grid three-columns">
+                            <label>
+                                Setor
+                                <input id="loteSetor" type="text" inputmode="numeric" maxlength="3" value="99">
+                            </label>
+
+                            <label>
+                                Quadra
+                                <input id="loteQuadra" type="text" inputmode="numeric" maxlength="3" value="999">
+                            </label>
+
+                            <label>
+                                Quantidade
+                                <input id="loteQuantidade" type="number" min="1" max="100" value="1">
+                            </label>
+                        </div>
+
+                        <div class="grid two-columns">
+                            <label>
+                                Sequência inicial
+                                <input id="loteSequenciaInicial" type="number" min="1" max="99999" value="4">
+                            </label>
+
+                            <label>
+                                Separador
+                                <select id="loteSeparador">
+                                    <option value="">Sem separador</option>
+                                    <option value=".">Ponto (.)</option>
+                                    <option value="-">Hífen (-)</option>
+                                    <option value="/">Barra (/)</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="registration-status">
+                            <div>
+                                <span class="status-label">Última sequência salva</span>
+                                <strong id="loteUltimaSequencia">00001</strong>
+                            </div>
+
+                            <div>
+                                <span class="status-label">Próxima sequência</span>
+                                <strong id="loteProximaSequencia">00002</strong>
+                            </div>
+
+                            <div>
+                                <span class="status-label">Quantidade</span>
+                                <strong id="loteQuantidadeResumo">1</strong>
+                            </div>
+                        </div>
+
+                        <div class="preview-card">
+                            <span>Pré-visualização</span>
+                            <strong id="lotePreview">9999900004</strong>
+                        </div>
+
+                        <div class="actions">
+                            <button id="gerarLotes" class="primary">Gerar lote(s)</button>
+                            <button id="baixarLotesTxt" class="secondary">Baixar TXT</button>
+                            <button id="limparLotes" class="secondary">Limpar resultado</button>
+                        </div>
+
+                        <div class="result-box">
+                            <span>Resultado</span>
+                            <pre id="loteResultado">—</pre>
+                        </div>
+
+                        <div class="actions">
+                            <button id="reiniciarSequenciaLotes" class="danger-outline">Reiniciar sequência</button>
+                        </div>
+
+            <div class="tab-footer-navigation">
+                <button class="back-home-button" type="button" data-open-tab="inicio">
+                    <span aria-hidden="true">←</span>
+                    Voltar para a Página Inicial
+                </button>
+            </div>
+        </section>
+
+                    <aside class="generator-sidebar">
+                        <section class="sidebar-card">
+                            <div class="section-heading">
+                                <h3>Histórico de gerações</h3>
+                            </div>
+
+                            <ul id="loteHistorico" class="history-list compact-list">
+                                <li class="empty-state">Nenhum lote gerado recentemente.</li>
+                            </ul>
+                        </section>
+
+                        <section class="sidebar-card">
+                            <h3>Padrão atual</h3>
+                            <p class="help-text">
+                                Setor e quadra são completados com zeros à esquerda. A sequência utiliza cinco dígitos.
+                            </p>
+                            <div class="format-examples">
+                                <div>
+                                    <span>Exemplo</span>
+                                    <code id="lotePadraoExemplo">9999900004</code>
+                                </div>
+                            </div>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="uvrm" class="tab-panel">
+            <div class="card">
+                <div class="section-heading main-heading">
+                    <div>
+                        <h2>Calculadora UVRM</h2>
+                        <p class="section-description">
+                            Monte uma lista com vários lançamentos em reais ou UVRM, copie cada valor separadamente e acompanhe o total da operação.
+                        </p>
+                    </div>
+                    <span class="feature-badge">Lista de lançamentos</span>
+                </div>
+
+                <div class="generator-grid">
+                    <section class="builder-panel">
+                        <div class="grid two-columns">
+                            <label>
+                                Valor atual da UVRM (R$)
+                                <input id="uvrmValorUnitario" type="text" inputmode="decimal" autocomplete="off" value="5,2151">
+                            </label>
+                            <label>
+                                Casas decimais da UVRM
+                                <select id="uvrmCasas">
+                                    <option value="2">2 casas</option>
+                                    <option value="3">3 casas</option>
+                                    <option value="4">4 casas</option>
+                                    <option value="6">Sem arredondamento</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="actions compact-actions">
+                            <button id="uvrmRestaurarPadrao" class="secondary">Restaurar valor padrão</button>
+                        </div>
+
+                        <div class="uvrm-entry-card">
+                            <div class="section-heading">
+                                <div>
+                                    <h3>Novo lançamento</h3>
+                                    <p class="mini-description">Informe um valor em reais ou uma quantidade de UVRM.</p>
+                                </div>
+                            </div>
+
+                            <label>
+                                Descrição <span class="optional-label">(opcional)</span>
+                                <input id="uvrmDescricao" type="text" list="uvrmDescricaoSugestoes" autocomplete="off" maxlength="100" placeholder="Ex.: Taxa de licença">
+                                <datalist id="uvrmDescricaoSugestoes"></datalist>
+                            </label>
+
+                            <div class="grid two-columns">
+                                <label>
+                                    Tipo do valor
+                                    <select id="uvrmTipoLancamento">
+                                        <option value="uvrm">Valor em UVRM</option>
+                                        <option value="reais">Valor em reais</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    <span id="uvrmValorLancamentoLabel">Valor em UVRM</span>
+                                    <input id="uvrmValorLancamento" type="text" inputmode="decimal" autocomplete="off" placeholder="0,00">
+                                </label>
+                                <label id="uvrmMultiplicadorCampo">
+                                    Quantidade
+                                    <input id="uvrmMultiplicador" type="number" inputmode="numeric" min="1" step="1" value="1" autocomplete="off">
+                                    <small class="field-hint">Ex.: quantidade de dias, meses ou ocorrências.</small>
+                                </label>
+                            </div>
+
+                            <p id="uvrmAjuda" class="help-text">O resultado será calculado antes de adicionar à lista.</p>
+
+                            <div class="preview-card">
+                                <span>Pré-visualização do lançamento</span>
+                                <strong id="uvrmResultado">—</strong>
+                                <small id="uvrmResultadoDetalhe"></small>
+                            </div>
+
+                            <div class="actions">
+                                <button id="adicionarUvrmLancamento" class="primary">Adicionar à lista</button>
+                                <button id="cancelarEdicaoUvrm" class="secondary" hidden>Cancelar edição</button>
+                                <button id="limparUvrm" class="secondary">Limpar campos</button>
+                            </div>
+                        </div>
+
+                        <div class="uvrm-list-section">
+                            <div class="section-heading">
+                                <div>
+                                    <h3>Lançamentos da operação atual</h3>
+                                    <p class="mini-description">Copie individualmente o valor de cada item para lançar no sistema.</p>
+                                </div>
+                                <span id="uvrmContador" class="counter-badge">0 itens</span>
+                            </div>
+
+                            <div id="uvrmListaAtual" class="uvrm-current-list">
+                                <p class="empty-state">Nenhum lançamento adicionado.</p>
+                            </div>
+
+                            <div class="uvrm-totals">
+                                <span>Total da operação</span>
+                                <strong id="uvrmTotalAtual">R$ 0,00</strong>
+                            </div>
+
+                            <div class="actions">
+                                <button id="copiarTodosUvrm" class="primary">Copiar todos os valores</button>
+                                <button id="copiarUvrmCompleto" class="secondary">Copiar lista detalhada</button>
+                                <button id="copiarUvrmValor" class="secondary">Copiar total</button>
+                                <button id="salvarOperacaoUvrm" class="secondary">Finalizar e salvar</button>
+                                <button id="limparListaUvrm" class="danger">Limpar lista</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <aside class="generator-sidebar">
+                        <section class="sidebar-card">
+                            <div class="section-heading">
+                                <h3>Histórico de operações</h3>
+                            </div>
+                            <input id="pesquisaHistoricoUvrm" type="search" placeholder="Pesquisar no histórico">
+                            <div id="uvrmHistorico" class="uvrm-operation-history">
+                                <p class="empty-state">Nenhuma operação salva.</p>
+                            </div>
+                        </section>
+
+                        <section class="sidebar-card">
+                            <h3>Como funciona</h3>
+                            <p class="help-text">O valor unitário da UVRM e a lista atual são salvos automaticamente neste navegador.</p>
+                            <p class="help-text">Ao finalizar uma operação, todos os itens e o total ficam disponíveis no histórico.</p>
+                        </section>
+                    </aside>
+                </div>
+
+                <div class="tab-footer-navigation">
+                    <button class="back-home-button" type="button" data-open-tab="inicio"><span aria-hidden="true">←</span> Voltar para a Página Inicial</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="percentual" class="tab-panel">
+            <div class="card">
+                <div class="section-heading main-heading">
+                    <div>
+                        <h2>Calculadora percentual</h2>
+                        <p class="section-description">
+                            Escolha o tipo de cálculo e obtenha o resultado automaticamente durante a digitação.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="generator-grid">
+                    <section class="builder-panel">
+                        <label>
+                            Tipo de cálculo
+                            <select id="percentualModo">
+                                <option value="percentual">Quanto é um percentual de um valor?</option>
+                                <option value="acrescimo">Acrescentar percentual ao valor</option>
+                                <option value="desconto">Descontar percentual do valor</option>
+                                <option value="proporcao">Um valor representa quantos por cento de outro?</option>
+                                <option value="variacao">Qual foi a variação percentual entre dois valores?</option>
+                            </select>
+                        </label>
+
+                        <div class="grid two-columns">
+                            <label>
+                                <span id="percentualRotuloValor1">Valor base</span>
+                                <input id="percentualValor1" type="text" inputmode="decimal" autocomplete="off" placeholder="0,00">
+                            </label>
+
+                            <label>
+                                <span id="percentualRotuloValor2">Percentual</span>
+                                <input id="percentualValor2" type="text" inputmode="decimal" autocomplete="off" placeholder="0">
+                            </label>
+                        </div>
+
+                        <p id="percentualAjuda" class="help-text">
+                            Informe o valor base e o percentual desejado.
+                        </p>
+
+                        <div class="registration-status">
+                            <div>
+                                <span class="status-label">Operação</span>
+                                <strong id="percentualOperacaoResumo">Percentual do valor</strong>
+                            </div>
+
+                            <div>
+                                <span class="status-label">Resultado principal</span>
+                                <strong id="percentualResultadoResumo">—</strong>
+                            </div>
+
+                            <div>
+                                <span class="status-label">Situação</span>
+                                <strong id="percentualStatus">Aguardando</strong>
+                            </div>
+                        </div>
+
+                        <div class="preview-card">
+                            <span>Resultado completo</span>
+                            <strong id="percentualResultadoCompleto">—</strong>
+                        </div>
+
+                        <div class="results-grid percentual-results-grid">
+                            <div class="result-box">
+                                <span id="percentualResultadoSecundarioRotulo">Valor do percentual</span>
+                                <strong id="percentualResultadoSecundario">—</strong>
+                            </div>
+
+                            <div class="result-box">
+                                <span id="percentualResultadoFinalRotulo">Valor final</span>
+                                <strong id="percentualResultadoFinal">—</strong>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button id="copiarPercentualValor" class="primary">Copiar resultado</button>
+                            <button id="copiarPercentualCompleto" class="secondary">Copiar cálculo completo</button>
+                            <button id="limparPercentual" class="secondary">Limpar campos</button>
+                        </div>
+
+            <div class="tab-footer-navigation">
+                <button class="back-home-button" type="button" data-open-tab="inicio">
+                    <span aria-hidden="true">←</span>
+                    Voltar para a Página Inicial
+                </button>
+            </div>
+        </section>
+
+                    <aside class="generator-sidebar">
+                        <section class="sidebar-card">
+                            <div class="section-heading">
+                                <h3>Histórico de cálculos</h3>
+                            </div>
+
+                            <input id="pesquisaHistoricoPercentual" type="search" placeholder="Pesquisar no histórico">
+
+                            <ul id="percentualHistorico" class="history-list compact-list">
+                                <li class="empty-state">Nenhum cálculo realizado.</li>
+                            </ul>
+                        </section>
+
+                        <section class="sidebar-card">
+                            <h3>Tipos disponíveis</h3>
+
+                            <div class="format-examples">
+                                <div>
+                                    <span>Percentual</span>
+                                    <code>10% de R$ 200,00 = R$ 20,00</code>
+                                </div>
+
+                                <div>
+                                    <span>Proporção</span>
+                                    <code>R$ 20,00 de R$ 200,00 = 10%</code>
+                                </div>
+
+                                <div>
+                                    <span>Variação</span>
+                                    <code>R$ 100,00 para R$ 120,00 = 20%</code>
+                                </div>
+                            </div>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+
+<section id="datas" class="tab-panel">
+    <div class="card">
+        <div class="section-heading main-heading">
+            <div>
+                <h2>Datas</h2>
+                <p class="section-description">Conte dias entre datas ou calcule uma nova data somando ou subtraindo dias corridos.</p>
+            </div>
+        </div>
+
+        <div class="datas-grid">
+            <section class="builder-panel">
+                <div class="form-grid">
+                    <label>
+                        Operação
+                        <select id="datasOperacao">
+                            <option value="entre" selected>Contador de dias entre datas</option>
+                            <option value="somar">Somar Dias em Datas</option>
+                            <option value="subtrair">Subtrair Dias em Datas</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Data inicial
+                        <input id="datasInicio" type="date">
+                    </label>
+
+                    <label id="datasFinalCampo">
+                        Data final
+                        <input id="datasFinal" type="date">
+                    </label>
+
+                    <label id="datasQuantidadeCampo" hidden>
+                        Quantidade de dias
+                        <input id="datasQuantidade" type="number" min="0" step="1" inputmode="numeric" placeholder="Ex.: 30">
+                    </label>
+                </div>
+
+                <p id="datasFeedback" class="feedback-message" aria-live="polite"></p>
+
+                <div class="actions">
+                    <button id="calcularDatas" class="primary" type="button">Calcular</button>
+                    <button id="limparDatas" class="secondary" type="button">Limpar</button>
+                </div>
+            </section>
+
+            <aside class="datas-result-card" aria-live="polite">
+                <span id="datasResultadoRotulo" class="eyebrow">RESULTADO</span>
+                <strong id="datasResultado">—</strong>
+                <p id="datasResultadoDetalhe">Informe os dados para calcular.</p>
+                <button id="copiarDatasResultado" class="secondary" type="button" disabled>Copiar resultado</button>
+            </aside>
+        </div>
+        <section class="sidebar-card dates-history-card">
+            <div class="section-heading">
+                <div>
+                    <h3>Histórico de cálculos</h3>
+                    <p class="mini-description">Resultados recentes salvos localmente e sincronizados.</p>
+                </div>
+            </div>
+            <ul id="datasHistorico" class="history-list compact-list">
+                <li class="empty-state">Nenhum cálculo de datas realizado recentemente.</li>
+            </ul>
+        </section>
+        <div class="tab-footer-navigation">
+            <button class="back-home-button" type="button" data-open-tab="inicio"><span aria-hidden="true">←</span> Voltar para a Página Inicial</button>
+        </div>
+    </div>
+</section>
+
+        <section id="configuracoes" class="tab-panel">
+            <div class="card">
+                <div class="section-heading main-heading">
+                    <div><h2>Configurações e dados</h2><p class="section-description">Gerencie preferências, históricos e backups do aplicativo.</p></div>
+                </div>
+                <div class="generator-grid">
+                    <section class="builder-panel">
+                        <section class="settings-card">
+                            <h3>Backup completo</h3><p class="help-text">Exporte todas as preferências, modelos, sequências e históricos para um arquivo JSON.</p>
+                            <div class="actions"><button id="exportarBackup" class="primary">Exportar backup</button><label class="file-button secondary">Importar backup<input id="importarBackup" type="file" accept=".json,application/json"></label></div>
+                            <p id="backupStatus" class="feedback" aria-live="polite"></p>
+
+                        <section class="settings-card">
+                            <h3>Limpeza seletiva</h3><p class="help-text">Remova somente os dados desejados, sem afetar os demais módulos.</p>
+                            <div class="settings-checklist">
+                                <label class="checkbox-row"><input id="limparModelosArquivos" type="checkbox">Modelos do gerador de nomes</label>
+                                <label class="checkbox-row"><input id="limparPreferenciasCampos" type="checkbox">Valores e preferências dos campos</label>
+                                <label class="checkbox-row"><input id="reiniciarSequenciaNoReset" type="checkbox">Reiniciar sequência de lotes</label>
+                            </div>
+                            <div class="actions"><button id="executarLimpezaSeletiva" class="danger-outline">Executar limpeza selecionada</button></div>
+                        </section>
+                        <section class="settings-card">
+                            <h3>Gerenciamento de históricos</h3>
+                            <p class="help-text">
+                                Escolha entre remover somente a cópia deste navegador ou propagar a exclusão
+                                para os históricos sincronizados da conta.
+                            </p>
+                            <div class="actions">
+                                <button id="limparHistoricosDispositivo" class="danger-outline" type="button">
+                                    Limpar históricos deste dispositivo
+                                </button>
+                                <button id="excluirHistoricosSincronizados" class="danger-outline" type="button">
+                                    Excluir históricos sincronizados
+                                </button>
+                            </div>
+                            <p class="help-text">
+                                A limpeza local não remove registros armazenados online e eles poderão retornar após uma nova sincronização. A exclusão sincronizada exige conexão e confirmação dupla.
+                            </p>
+                        </section>
+
+                        <section class="settings-card">
+                            <h3>Exportações e redefinições</h3>
+                            <div class="actions">
+                                <button id="exportarEstatisticasCsv" class="secondary" type="button">Estatísticas CSV</button>
+                                <button id="exportarEstatisticasJson" class="secondary" type="button">Estatísticas JSON</button>
+                                <button id="exportarEstatisticasTxt" class="secondary" type="button">Estatísticas TXT</button>
+                                <button id="resetarFavoritos" class="danger-outline" type="button">Resetar favoritos</button>
+                            </div>
+                        </section>
+
+                        <section class="settings-card">
+                            <div class="section-heading">
+                                <div><h3>Estatísticas detalhadas</h3><p class="help-text">Acessos e ações registrados localmente por módulo.</p></div>
+                                <button id="resetarEstatisticas" class="text-button" type="button">Zerar estatísticas</button>
+                            </div>
+                            <div class="settings-statistics-summary">
+                                <div><span>Total de acessos</span><strong id="configTotalAccesses">0</strong></div>
+                                <div><span>Total de ações</span><strong id="configTotalActions">0</strong></div>
+                                <div><span>Favoritos</span><strong id="configFavoriteCount">0</strong></div>
+                            </div>
+                            <div class="statistics-table-wrap">
+                                <table class="statistics-table">
+                                    <thead><tr><th>Ferramenta</th><th>Acessos</th><th>Ações</th><th>Total</th></tr></thead>
+                                    <tbody id="configStatisticsBody"></tbody>
+                                </table>
+                            </div>
+                        </section>
+                        <section class="settings-card danger-zone">
+                            <h3>Restaurar aplicativo</h3>
+                            <p class="help-text">
+                                Remove os dados locais deste navegador e retorna o aplicativo ao estado inicial.
+                                Dados sincronizados online não são excluídos por esta ação.
+                            </p>
+                            <div class="actions">
+                                <button id="limparTudo" class="danger-outline" type="button">
+                                    Apagar todos os dados locais
+                                </button>
+                            </div>
+                        </section>
+                    </section>
+                    <aside class="generator-sidebar">
+                        <section class="sidebar-card"><h3>Informações do aplicativo</h3><div class="format-examples"><div><span>Versão</span><code data-app-version></code></div><div><span>Armazenamento</span><code>Local do navegador</code></div><div><span>Formato do backup</span><code>JSON</code></div></div></section>
+                        <section class="sidebar-card"><h3>Último backup</h3><p id="ultimoBackupInfo" class="help-text">Nenhum backup registrado.</p></section>
+                    </aside>
+                </div>
+                <div class="tab-footer-navigation">
+                    <button class="back-home-button" type="button" data-open-tab="inicio"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="central-documentos" class="tab-panel documents-panel">
+            <div class="card documents-shell">
+                <div class="section-heading main-heading">
+                    <div>
+                        <span class="eyebrow">Versão <span data-app-version></span></span>
+                        <h2>Central de documentos</h2>
+                        <p class="section-description">Crie, organize, edite e reutilize seus próprios modelos de documentos.</p>
+                    </div>
+                    <button id="documentNewModel" class="secondary-button" type="button">Novo modelo</button>
+                </div>
+
+                <section class="documents-models-panel" aria-label="Modelos de documentos">
+                    <div class="documents-models-heading">
+                        <div>
+                            <h3>Modelos de documento</h3>
+                            <p class="mini-description">Filtre e selecione o modelo que será carregado no documento.</p>
+                        </div>
+                        <div class="document-model-actions">
+                            <button id="documentManageCategories" class="secondary-button document-manage-groups" type="button">
+                                Gerenciar categorias
+                            </button>
+                            <button id="documentManageGroups" class="secondary-button document-manage-groups" type="button">
+                                Gerenciar grupos
+                            </button>
+                            <button id="documentExportModels" class="text-button" type="button">
+                                Exportar modelos
+                            </button>
+                            <button id="documentImportModels" class="text-button" type="button">
+                                Importar modelos
+                            </button>
+                            <input
+                                id="documentImportModelsInput"
+                                type="file"
+                                accept=".json,application/json"
+                                hidden
+                            >
+                        </div>
+                    </div>
+
+                    <div class="document-filter-toolbar">
+                        <label class="document-search-field">
+                            <span>Pesquisar</span>
+                            <input id="documentSearch" type="search" placeholder="Título, categoria, grupo ou conteúdo">
+                        </label>
+
+                        <label>
+                            <span>Categoria</span>
+                            <select id="documentCategory">
+                                <option value="todos">Todas as categorias</option>
+                                <option>Despachos</option>
+                                <option>Certidões</option>
+                                <option>Ofícios</option>
+                                <option>WhatsApp</option>
+                                <option>Declarações</option>
+                                <option>Personalizados</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Grupo</span>
+                            <select id="documentGroupFilter">
+                                <option value="todos">Todos os grupos</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Ordem</span>
+                            <select id="documentOrder">
+                                <option value="titulo">Título</option>
+                                <option value="categoria">Categoria</option>
+                                <option value="grupo">Grupo</option>
+                            </select>
+                        </label>
+
+                        <button id="documentClearFilters" class="text-button document-clear-filters" type="button">
+                            Limpar filtros
+                        </button>
+                    </div>
+
+                    <label class="document-model-select-field">
+                        <span>Modelo</span>
+                        <select id="documentModelSelect">
+                            <option value="">Selecione um modelo de documento...</option>
+                        </select>
+                    </label>
+                </section>
+
+                <main class="documents-editor">
+                    <div id="documentEmptyState" class="document-editor-empty">
+                        <strong>Selecione um modelo</strong>
+                        <p>Escolha um modelo acima ou clique em “Novo modelo” para começar.</p>
+                    </div>
+
+                    <div id="documentEditorContent" class="document-editor-content" hidden>
+                        <div class="documents-editor-heading">
+                            <div>
+                                <span class="eyebrow">Documento</span>
+                                <h3 id="documentEditorHeading">Novo modelo</h3>
+                            </div>
+                        </div>
+
+                        <section class="document-edit-section">
+                            <div class="document-model-meta-grid">
+                                <label>
+                                    <span>Título do modelo</span>
+                                    <input id="documentTitle" placeholder="Título completo do modelo">
+                                </label>
+
+                                <label>
+                                    <span>Categoria</span>
+                                    <select id="documentEditorCategory">
+                                        <option>Despachos</option>
+                                        <option>Certidões</option>
+                                        <option>Ofícios</option>
+                                        <option>WhatsApp</option>
+                                        <option>Declarações</option>
+                                        <option>Personalizados</option>
+                                    </select>
+                                </label>
+
+                                <label>
+                                    <span>Grupo</span>
+                                    <select id="documentEditorGroup">
+                                        <option value="">Sem grupo</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <label>
+                                <span>Modelo com variáveis</span>
+                                <textarea id="documentTemplate" rows="9" placeholder="Use variáveis como {nome}, {processo}, {cnae}, {zoneamento}, {endereco} e {data}."></textarea>
+                            </label>
+                        </section>
+
+                        <section class="document-variables-card">
+                            <div class="section-heading">
+                                <div>
+                                    <h3>Variáveis do documento</h3>
+                                    <p class="mini-description">Os campos abaixo são identificados automaticamente no texto do modelo.</p>
+                                </div>
+                            </div>
+                            <div id="documentVariables" class="document-variables-grid"></div>
+                        </section>
+
+                        <section class="document-preview-section">
+                            <label>
+                                <span>Pré-visualização</span>
+                                <textarea id="documentPreview" rows="11" readonly></textarea>
+                            </label>
+                        </section>
+
+                        <div class="documents-action-bar">
+                            <div class="documents-primary-actions">
+                                <button id="documentCopy" type="button">Copiar texto</button>
+                                <button id="documentSave" class="secondary-button" type="button">Salvar modelo</button>
+                                <button id="documentClear" class="secondary-button" type="button">Limpar campos</button>
+                            </div>
+
+                            <div class="documents-secondary-actions">
+                                <button id="documentDuplicate" class="text-button" type="button">Duplicar modelo</button>
+                                <button id="documentExportTxt" class="text-button" type="button">Exportar TXT</button>
+                                <button id="documentDelete" class="danger-button" type="button">Excluir modelo</button>
+                            </div>
+                        </div>
+
+                        <p id="documentFeedback" class="feedback-message" aria-live="polite"></p>
+                    </div>
+                </main>
+
+                <dialog id="documentCategoryDialog" class="document-group-dialog">
+                    <form method="dialog" class="document-group-dialog-card">
+                        <div class="document-group-dialog-heading">
+                            <div>
+                                <span class="eyebrow">Organização</span>
+                                <h3>Gerenciar categorias</h3>
+                                <p class="mini-description">Crie, renomeie ou exclua categorias usadas para classificar os modelos.</p>
+                            </div>
+                            <button class="text-button document-group-dialog-close" value="cancel" aria-label="Fechar">✕</button>
+                        </div>
+
+                        <div class="document-group-create-row">
+                            <label>
+                                <span>Nova categoria</span>
+                                <input id="documentNewCategoryName" maxlength="60" placeholder="Ex.: Licenciamento, Fiscalização, Atendimento">
+                            </label>
+                            <button id="documentAddCategory" class="primary-button" type="button">Adicionar</button>
+                        </div>
+
+                        <div id="documentCategoryList" class="document-group-list"></div>
+
+                        <p id="documentCategoryFeedback" class="feedback-message" aria-live="polite"></p>
+                    </form>
+                </dialog>
+
+                <dialog id="documentGroupDialog" class="document-group-dialog">
+                    <form method="dialog" class="document-group-dialog-card">
+                        <div class="document-group-dialog-heading">
+                            <div>
+                                <span class="eyebrow">Organização</span>
+                                <h3>Gerenciar grupos</h3>
+                                <p class="mini-description">Crie, renomeie ou exclua grupos usados para organizar os modelos.</p>
+                            </div>
+                            <button class="text-button document-group-dialog-close" value="cancel" aria-label="Fechar">✕</button>
+                        </div>
+
+                        <div class="document-group-create-row">
+                            <label>
+                                <span>Novo grupo</span>
+                                <input id="documentNewGroupName" maxlength="60" placeholder="Ex.: Licenciamento, Atendimento, Fiscalização">
+                            </label>
+                            <button id="documentAddGroup" class="primary-button" type="button">Adicionar</button>
+                        </div>
+
+                        <div id="documentGroupList" class="document-group-list"></div>
+
+                        <p id="documentGroupFeedback" class="feedback-message" aria-live="polite"></p>
+                    </form>
+                </dialog>
+
+                <div class="tab-footer-navigation">
+                    <button class="back-home-button" type="button" data-open-tab="inicio">
+                        <span aria-hidden="true">←</span>Voltar para a Página Inicial
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="biblioteca" class="tab-panel productivity-panel">
+            <div class="card">
+                <div class="section-heading main-heading"><div><span class="eyebrow">Produtividade</span><h2>Biblioteca de ferramentas</h2><p class="section-description">Catálogo central para localizar ferramentas, favoritos e modelos reutilizáveis.</p></div></div>
+                <div class="productivity-toolbar"><label class="productivity-search"><span>Pesquisar</span><input id="librarySearch" type="search" placeholder="Ferramenta, categoria ou palavra-chave"></label><label><span>Categoria</span><select id="libraryCategory"><option value="todos">Todas</option></select></label><label><span>Exibição</span><select id="libraryView"><option value="grid">Grade</option><option value="list">Lista</option></select></label></div>
+                <div class="library-summary"><div><span>Ferramentas</span><strong id="libraryToolCount">0</strong></div><div><span>Favoritos</span><strong id="libraryFavoriteCount">0</strong></div><div><span>Modelos de arquivo</span><strong id="libraryModelCount">0</strong></div></div>
+                <section class="productivity-section"><div class="section-heading"><div><h3>Catálogo</h3><p class="mini-description">Abra uma ferramenta ou altere seus favoritos.</p></div></div><div id="libraryTools" class="library-tools"></div></section>
+                <section class="productivity-section"><div class="section-heading"><div><h3>Modelos rápidos</h3><p class="mini-description">Modelos existentes do Montador de nome de arquivo.</p></div><button class="text-button" type="button" data-open-tab="arquivo">Gerenciar modelos</button></div><div id="libraryModels" class="library-models"></div></section>
+                <div class="tab-footer-navigation"><button class="back-home-button" type="button" data-open-tab="inicio"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button></div>
+            </div>
+        </section>
+
+        <section id="historico-global" class="tab-panel productivity-panel">
+            <div class="card">
+                <div class="section-heading main-heading"><div><span class="eyebrow">Produtividade</span><h2>Histórico global</h2><p class="section-description">Consulte e sincronize em um único lugar os registros produzidos pelos módulos, mantendo funcionamento local quando estiver offline.</p></div><div class="actions"><button id="globalHistorySync" class="primary-button" type="button">Sincronizar histórico</button><button id="globalHistoryExportCsv" class="secondary-button" type="button">Exportar CSV</button><button id="globalHistoryExportJson" class="secondary-button" type="button">Exportar JSON</button></div></div>
+                <div class="productivity-toolbar"><label class="productivity-search"><span>Pesquisar</span><input id="globalHistorySearch" type="search" placeholder="Conteúdo do registro"></label><label><span>Módulo</span><select id="globalHistoryModule"><option value="todos">Todos os módulos</option></select></label><label><span>Período</span><select id="globalHistoryPeriod"><option value="todos">Todo o período</option><option value="hoje" selected>Hoje</option><option value="7">Últimos 7 dias</option><option value="30">Últimos 30 dias</option></select></label></div>
+                <div class="library-summary"><div><span>Registros encontrados</span><strong id="globalHistoryCount">0</strong></div><div><span>Módulos com dados</span><strong id="globalHistoryModuleCount">0</strong></div><div><span>Pendentes</span><strong id="globalHistoryPending">0</strong></div><div><span>Última sincronização</span><strong id="globalHistoryLastSync">Nunca</strong></div><div><span>Último registro</span><strong id="globalHistoryLast">Nenhum</strong></div></div>
+                <p id="globalHistorySyncStatus" class="help-text" aria-live="polite"></p><div id="globalHistoryList" class="global-history-list"></div>
+                <div class="tab-footer-navigation"><button class="back-home-button" type="button" data-open-tab="inicio"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button></div>
+            </div>
+        </section>
+
+        <section id="sobre" class="tab-panel">
+            <div class="card about-card">
+                <div class="section-heading main-heading">
+                    <div>
+                        <span class="eyebrow">Informações do aplicativo</span>
+                        <h2>Sobre os Utilitários Municipais</h2>
+                        <p class="section-description">Consulte a versão instalada, as novidades e o histórico de evolução do sistema.</p>
+                    </div>
+                </div>
+
+                <div class="about-grid">
+                    <section class="settings-card">
+                        <h3>Versão atual</h3>
+                        <dl class="about-details">
+                            <div><dt>Aplicativo</dt><dd data-app-name>Utilitários Municipais</dd></div>
+                            <div><dt>Versão</dt><dd data-app-version></dd></div>
+                            <div><dt>Arquitetura</dt><dd>Modular — Série 4</dd></div>
+                            <div><dt>Armazenamento</dt><dd>Local + Backend Adapter</dd></div>
+                            <div><dt>Ambiente BD</dt><dd id="aboutDatabaseEnvironment">—</dd></div>
+                        </dl>
+                    </section>
+
+                    <section class="settings-card">
+                        <h3>Novidades da 4.6.1.17</h3>
+                        <ul>
+                            <li><strong>Sincronização automática:</strong> preparada a validação do fluxo completo entre dois navegadores com Realtime ativo.</li>
+                            <li><strong>Diagnóstico:</strong> o Console informa quando a sincronização solicitada por um evento Realtime foi concluída e se os dados foram aplicados.</li>
+                            <li><strong>Conflitos:</strong> permanece preservado o fluxo existente <code>handleRealtimeChange() → pullRemoteData() → detectConflict()</code>.</li>
+                            <li><strong>Estabilidade:</strong> não altera renovação do token, reconexão de rede nem o ciclo de logout/login já homologados.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <section class="settings-card">
+                    <h3>Histórico de versões</h3>
+                    <div class="about-timeline" id="aboutVersionHistory">
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.17 DEV</strong>
+                                    <span>Sincronização automática entre navegadores</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Realtime e sincronização</h4>
+                                        <ul>
+                                            <li>Valida o fluxo de alteração remota entre dois navegadores autenticados.</li>
+                                            <li>Registra o resultado do processamento iniciado pelo Realtime.</li>
+                                            <li>Preserva a detecção de conflitos exclusivamente no serviço de sincronização.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.16 DEV</strong>
+                                    <span>Reconexão explícita após novo login</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Autenticação e Realtime</h4>
+                                        <ul>
+                                            <li>Restabelece o Realtime diretamente após o login retornar uma sessão válida.</li>
+                                            <li>Não depende exclusivamente do evento <code>SIGNED_IN</code> para o ciclo <code>logout → login</code>.</li>
+                                            <li>Mantém a conexão antes das operações REST de perfil e sincronização.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.15 DEV</strong>
+                                    <span>Login Realtime independente da sincronização</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Autenticação e resiliência</h4>
+                                        <ul>
+                                            <li>Conecta o Realtime imediatamente após o evento <code>SIGNED_IN</code>.</li>
+                                            <li>Não deixa falhas REST pós-login impedirem a conexão Realtime.</li>
+                                            <li>Preserva as proteções de logout, renovação e reconexão já homologadas.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.14 DEV</strong>
+                                    <span>Estabilidade de logout e login do Realtime</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Autenticação e Realtime</h4>
+                                        <ul>
+                                            <li>Encerra explicitamente o Realtime no logout, sem depender apenas do evento do SDK.</li>
+                                            <li>Limpa canal e timers associados à sessão encerrada.</li>
+                                            <li>Evita recriar uma conexão já inscrita durante eventos redundantes de login.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.13 DEV</strong>
+                                    <span>Recuperação resiliente no retorno online</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Retorno da rede</h4>
+                                        <ul>
+                                            <li>Registra o evento <code>online</code> independentemente do estado momentâneo da sessão.</li>
+                                            <li>Reavalia a sessão após 500 ms quando necessário antes de iniciar a recuperação.</li>
+                                            <li>Mantém a reconexão protegida contra duplicidade e respeita logout/desconexões intencionais.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.12 DEV</strong>
+                                    <span>Recuperação do Realtime no retorno online</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Recuperação de rede</h4>
+                                        <ul>
+                                            <li>Registra quando uma assinatura ativa atravessa uma interrupção de rede.</li>
+                                            <li>Verifica a recuperação no retorno online mesmo se o último estado conhecido ainda for <code>SUBSCRIBED</code>.</li>
+                                            <li>Aguarda 5 segundos pela recuperação automática do SDK antes de recriar a conexão.</li>
+                                            <li>Cancela a recuperação programada se o canal confirmar novamente <code>SUBSCRIBED</code>.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.11 DEV</strong>
+                                    <span>Renovação normal e reconexão do Realtime</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Estabilidade do Realtime</h4>
+                                        <ul>
+                                            <li>Restaura o intervalo normal de renovação preventiva do token após o teste controlado da versão anterior.</li>
+                                            <li>Trata falhas e encerramentos do canal com agendamento controlado de reconexão.</li>
+                                            <li>Verifica a necessidade de recuperação do Realtime quando o navegador volta a ficar online.</li>
+                                            <li>Evita reconexões concorrentes e respeita desconexões intencionais, como logout.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.10 DEV</strong>
+                                    <span>Validação da renovação do token Realtime</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Renovação controlada</h4>
+                                        <ul>
+                                            <li>Reduz temporariamente o intervalo de renovação para 60 segundos para validar o ciclo completo sem aguardar 55 minutos.</li>
+                                            <li>Mantém a atualização da autenticação por <code>setAuth(...)</code> sem recriar o canal Realtime.</li>
+                                            <li>Registra no log DEV o modo de teste e o resultado da renovação.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.9 DEV</strong>
+                                    <span>Estabilidade do Realtime</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Etapa 1 — Estado da assinatura</h4>
+                                        <ul>
+                                            <li>Passa a acompanhar internamente o estado real da assinatura Realtime.</li>
+                                            <li><code>isConnected()</code> retorna verdadeiro somente quando o canal está em <code>SUBSCRIBED</code>.</li>
+                                            <li>A renovação de token e a reconexão automática permaneceram fora desta primeira etapa.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Etapa 2 — Renovação do token</h4>
+                                        <ul>
+                                            <li>Agenda a renovação preventiva conforme a validade informada pelo token Realtime.</li>
+                                            <li>Valida a sessão SuperDB antes de emitir uma nova credencial Realtime.</li>
+                                            <li>Atualiza o cliente ativo com <code>setAuth(...)</code>, sem recriar o canal em uma renovação normal.</li>
+                                            <li>Remove o timer de renovação ao desconectar ou efetuar logout.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.8 DEV</strong>
+                                    <span>Consolidação do SuperDB e Realtime</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Backend</h4>
+                                        <ul>
+                                            <li>Consolida o SuperDB como backend operacional exclusivo da aplicação.</li>
+                                            <li>Remove do runtime os componentes e configurações legados do Supabase.</li>
+                                            <li>Adota terminologia neutra para dados e armazenamento online.</li>
+                                        </ul>
+                                    </section>
+                        
+                                    <section>
+                                        <h4>Realtime</h4>
+                                        <ul>
+                                            <li>Implementa a conexão Realtime para acompanhamento das alterações dos dados online.</li>
+                                            <li>Consolida eventos do mesmo lote antes de solicitar a sincronização.</li>
+                                            <li>Ajusta a inicialização para utilizar corretamente a sessão autenticada restaurada.</li>
+                                        </ul>
+                                    </section>
+                        
+                                    <section>
+                                        <h4>Sincronização</h4>
+                                        <ul>
+                                            <li>Preserva os mecanismos de sincronização automática e manual já homologados.</li>
+                                            <li>Mantém o tratamento de conflitos entre dados locais e online.</li>
+                                            <li>Valida a conexão automática do Realtime após a restauração da sessão.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>                        
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.7 DEV</strong>
+                                    <span>Limpeza dos logs de diagnóstico</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Estabilização</h4>
+                                        <ul>
+                                            <li>Remove os logs temporários de diagnóstico dos históricos e da autenticação.</li>
+                                            <li>Mantém os tratamentos de erro e os logs operacionais permanentes.</li>
+                                            <li>Preserva o fluxo de autenticação e sincronização homologado.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>                        
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.6 DEV</strong>
+                                    <span>Identidade funcional dos históricos</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Sincronização</h4>
+                                        <ul>
+                                            <li>Identidade determinística por módulo, ação e conteúdo funcional.</li>
+                                            <li>Campos temporais/técnicos deixam de provocar duplicações funcionais.</li>
+                                            <li>CPF/CNPJ não recria o mesmo documento válido em atualizações sucessivas.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.5 DEV</strong>
+                                    <span>Compatibilidade de validação no Firefox</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>ValidationCenter</h4>
+                                        <ul>
+                                            <li>Event.target é validado como Element antes do uso de matches() e classList.</li>
+                                            <li>Corrigido o TypeError observado no Firefox durante eventos de validação.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.4 DEV</strong>
+                                    <span>Etapa 5 — REST homologado do SuperDB</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>history_entries</h4>
+                                        <ul>
+                                            <li>REST ajustado para api.superdb.com.br conforme laboratório v0.2.0.</li>
+                                            <li>Profiles do projeto enviados em Accept-Profile e Content-Profile.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1.3 DEV</strong>
+                                    <span>Etapa 5 — correção do Data Plane token</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>history_entries</h4>
+                                        <ul>
+                                            <li>Corrigida a leitura do token retornado diretamente como string pelo SuperDB 0.2.2.</li>
+                                            <li>Mantido diagnóstico DEV para homologar o envio da outbox.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.1 DEV</strong>
+                                    <span>Etapa 5 — history_entries no SuperDB</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Migração</h4>
+                                        <ul>
+                                            <li>Ativada a escrita de históricos no SuperDB DEV.</li>
+                                            <li>REST upsert preserva a idempotência por user_id + client_id.</li>
+                                            <li>Primeira homologação deve ser feita com um único usuário/dispositivo.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.0.9 DEV</strong>
+                                    <span>Etapa 4 — ajustes finais de sincronização</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Ajustes</h4>
+                                        <ul>
+                                            <li>Feedback visual no Sincronizar agora quando não existem diferenças.</li>
+                                            <li>Reidratação do campo Cor principal após recuperação remota.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.0.8 DEV</strong>
+                                    <span>Etapa 4 — renovação automática de JWT</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>SuperDB</h4>
+                                        <ul>
+                                            <li>Renovação preventiva da sessão persistida antes da sincronização.</li>
+                                            <li>Uma única renovação e repetição quando o backend retornar JWT expirado.</li>
+                                            <li>Se a renovação falhar, a interface solicita novo login sem apagar dados locais.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.0.7 DEV</strong>
+                                    <span>Etapa 4 — sync_log no SuperDB</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Migração</h4>
+                                        <ul>
+                                            <li>Ativada a gravação de sync_log no SuperDB DEV.</li>
+                                            <li>Logs registram backend e etapa de migração nos detalhes.</li>
+                                            <li>history_entries permanece fora desta etapa.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.6.0.6 DEV</strong>
+                                    <span>Etapa 3 — migração SuperDB e correção do logout</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Alterações</h4>
+                                        <ul>
+                                            <li>Atualização imediata da interface após encerrar a sessão.</li>
+                                            <li>Preservação dos dados locais durante o logout.</li>
+                                            <li>Continuidade da validação de user_data no SuperDB DEV.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.3.1</strong>
+                                    <span>Correção de autenticação e controles da conta</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Correções</h4>
+                                        <ul>
+                                            <li>Restaurado o funcionamento do ícone de logon/logoff.</li>
+                                            <li>Corrigido login que permanecia indefinidamente em “Entrando...”.</li>
+                                            <li>Restaurado o fluxo original de atualização do estado da conta.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Preservado</h4>
+                                        <ul>
+                                            <li>Sincronização da Central de Documentos.</li>
+                                            <li>Mensagens aprimoradas de conflito e pendência.</li>
+                                            <li>Supabase Realtime continua fora do escopo.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.5.3</strong><span>Robustez da sincronização e proteção dos dados</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+                                <section><h4>Implementações</h4><ul><li>Estados de sincronização mais explícitos.</li><li>Mensagens aprimoradas para pendência, offline e conflito.</li><li>Proteção visual contra resolução acidental de conflitos.</li></ul></section>
+                                <section><h4>Escopo</h4><ul><li>Mantida a sincronização da Central de Documentos.</li><li>Sem alteração de tabelas ou RLS.</li><li>Supabase Realtime permanece fora do escopo.</li></ul></section>
+                            </div></div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.2</strong>
+                                    <span>Central de Documentos — versão de produção consolidada</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section><h4>Implementações</h4><ul>
+                                        <li>Gerenciamento de modelos, categorias e grupos.</li>
+                                        <li>Duplicação, importação e exportação de modelos.</li>
+                                        <li>Sincronização online de modelos, grupos e categorias.</li>
+                                    </ul></section>
+                                    <section><h4>Consolidação</h4><ul>
+                                        <li>Incorpora as etapas DEV 4.5.2.1 a 4.5.2.4 validadas.</li>
+                                        <li>Migração conservadora preserva dados existentes.</li>
+                                        <li>Supabase Realtime permanece fora do escopo.</li>
+                                    </ul></section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.2.4</strong>
+                                    <span>Sincronização efetiva da Central de Documentos</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Implementações</h4>
+                                        <ul>
+                                            <li>Modelos, grupos e categorias passam a ser sincronizados no grupo documents.</li>
+                                            <li>Alterações da Central acionam diretamente a sincronização automática.</li>
+                                            <li>Refresh centralizado após aplicação dos dados online.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Compatibilidade</h4>
+                                        <ul>
+                                            <li>Registros remotos antigos recebem as novas chaves sem sobrescrever templates remotos existentes.</li>
+                                            <li>Nova migração local prepara dados criados nas versões 4.5.2.1–4.5.2.3.</li>
+                                            <li>Sem novo schema de banco, sem alteração de RLS e sem Realtime.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.2.3</strong>
+                                    <span>Persistência e sincronização da Central de Documentos</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Implementações</h4>
+                                        <ul>
+                                            <li>Preparação de modelos, grupos e categorias para o fluxo de sincronização existente.</li>
+                                            <li>Ponto único de atualização da Central após hidratação.</li>
+                                            <li>Eventos internos para alterações dos dados da Central.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Aspectos técnicos</h4>
+                                        <ul>
+                                            <li>Compatibilidade com os dados locais das versões anteriores.</li>
+                                            <li>Sem novo schema ou alteração de RLS.</li>
+                                            <li>Realtime permanece fora do escopo.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.2.2</strong>
+                                    <span>Gerenciamento de categorias na Central de Documentos</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Implementações</h4>
+                                        <ul>
+                                            <li>Criação, renomeação e exclusão de categorias personalizadas.</li>
+                                            <li>Filtros e editor passam a carregar categorias dinamicamente.</li>
+                                            <li>Exportação e importação JSON incluem as categorias.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Correções e segurança</h4>
+                                        <ul>
+                                            <li>Excluir categoria não exclui modelos; eles passam para “Sem categoria”.</li>
+                                            <li>Compatibilidade mantida com modelos e grupos existentes.</li>
+                                            <li>Sem mudanças de schema, RLS, Realtime ou sincronização online.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.2.1</strong>
+                                    <span>Gerenciamento e portabilidade dos modelos de documentos</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Implementações</h4>
+                                        <ul>
+                                            <li>Duplicação de modelos com criação de cópia independente e editável.</li>
+                                            <li>Exportação de modelos e grupos em arquivo JSON.</li>
+                                            <li>Importação de pacotes JSON com validação de conteúdo.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Aspectos técnicos</h4>
+                                        <ul>
+                                            <li>Importações idênticas são ignoradas para evitar duplicação exata.</li>
+                                            <li>Colisões de identificadores são resolvidas com novos IDs locais.</li>
+                                            <li>Sem alterações de schema, RLS, Realtime ou sincronização.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.2</strong>
+                                    <span>Início da próxima etapa da Central de Documentos</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Implementações</h4>
+                                        <ul>
+                                            <li>Iniciada a versão 4.5.2 DEV sobre a base estável 4.5.1.3.</li>
+                                            <li>Estrutura preparada para a próxima evolução funcional da Central de Documentos.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Aspectos técnicos</h4>
+                                        <ul>
+                                            <li>Ambiente alterado para desenvolvimento.</li>
+                                            <li>Sem mudanças de schema, RLS, Realtime ou sincronização nesta abertura de versão.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.1.3</strong>
+                                    <span>Consolidação visual e alinhamento do painel principal</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Correções</h4>
+                                        <ul>
+                                            <li>O painel principal passa a utilizar <code>margin-top: 0px</code>.</li>
+                                            <li>O alinhamento vertical com a sidebar foi consolidado com o valor validado visualmente.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Aspectos técnicos</h4>
+                                        <ul>
+                                            <li>Ajuste restrito à regra <code>.v45-sidebar ~ .tab-panel</code>.</li>
+                                            <li>Sem mudanças em Supabase, RLS, Realtime ou arquitetura de sincronização.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.1.2</strong>
+                                    <span>Correção de alinhamento do painel principal</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Correções</h4>
+                                        <ul>
+                                            <li>O painel principal foi reposicionado para alinhar seu topo ao topo visual da sidebar.</li>
+                                            <li>Removido o espaço vertical residual percebido após a retirada da barra superior de módulos.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Aspectos técnicos</h4>
+                                        <ul>
+                                            <li>Ajuste aplicado em <code>.v45-sidebar ~ .tab-panel</code>.</li>
+                                            <li>Correção limitada ao layout, sem alterações funcionais ou de sincronização.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.1.1</strong>
+                                    <span>Limpeza de filtros e consolidação da navegação lateral</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Correções</h4>
+                                        <ul>
+                                            <li>“Limpar filtros” desmarca o modelo selecionado.</li>
+                                            <li>A combobox retorna para “Selecione um modelo de documento...”.</li>
+                                            <li>O painel Documento retorna ao aviso inicial de seleção.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Alterações</h4>
+                                        <ul>
+                                            <li>Removida a barra superior de módulos/abas abertas.</li>
+                                            <li>A sidebar passa a ser a única navegação principal entre módulos.</li>
+                                            <li>Conta e sincronização permanecem no cabeçalho superior.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.1</strong>
+                                    <span>Nova organização da Central de Documentos</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Implementações</h4>
+                                        <ul>
+                                            <li>Modelos e filtros movidos para o topo.</li>
+                                            <li>Nova classificação por grupos.</li>
+                                            <li>Gerenciamento de grupos com criação, renomeação e exclusão.</li>
+                                            <li>Seleção de modelo por combobox larga.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Aspectos técnicos</h4>
+                                        <ul>
+                                            <li>Modelos antigos sem campo <code>group</code> são compatíveis.</li>
+                                            <li>Sem alteração da arquitetura de sincronização.</li>
+                                            <li>Sem mudanças em schema ou RLS.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.0.6</strong>
+                                    <span>Compactação vertical da sidebar</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Alterações</h4>
+                                        <ul>
+                                            <li>Redução controlada de alturas, margens e espaçamentos da navegação lateral.</li>
+                                            <li>Compactação adicional automática em telas com menor altura útil.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Aspectos técnicos</h4>
+                                        <ul>
+                                            <li><code>overflow-y: auto</code> foi mantido como fallback.</li>
+                                            <li>Nenhuma scrollbar foi ocultada artificialmente.</li>
+                                            <li>Sem alterações em Supabase, schema, RLS ou sincronização.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading">
+                                    <strong>4.5.0.5</strong>
+                                    <span>Correção visual do Histórico de versões</span>
+                                </span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden>
+                                <div class="about-version-detail-grid">
+                                    <section>
+                                        <h4>Correções</h4>
+                                        <ul>
+                                            <li>Eliminada a verticalização do número e do título da versão.</li>
+                                            <li>Removida a interferência do layout legado de 70 px nos cartões interativos.</li>
+                                            <li>Restabelecido o alinhamento horizontal do cabeçalho e da seta.</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h4>Aspectos técnicos</h4>
+                                        <ul>
+                                            <li>Correção restrita ao CSS da tela Sobre.</li>
+                                            <li>Sem alterações em banco, RLS ou sincronização.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.5.0.4</strong><span>Histórico de versões interativo</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Versões clicáveis e expansíveis.</li><li>Apenas uma versão aberta por vez.</li><li>Navegação acessível por teclado.</li></ul></section>
+<section><h4>Aspectos técnicos</h4><ul><li>Sem alterações em banco, RLS ou sincronização.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.5.0.3</strong><span>Correções visuais da Etapa 2</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Correções</h4><ul><li>Botão Recolher/Expandir redesenhado.</li><li>Conta retornou ao cabeçalho em formato compacto.</li></ul></section>
+<section><h4>Preservado</h4><ul><li>Indicador de sincronização integrado ao perfil.</li><li>Sidebar recolhível e menu móvel.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.5.0.2</strong><span>Evolução da sidebar e perfil</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Sidebar recolhível com persistência.</li><li>Drawer móvel com backdrop e fechamento por Escape.</li><li>Perfil com estados visuais de sincronização.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.5.0.1</strong><span>Correção de responsividade intermediária</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Correções</h4><ul><li>Dashboard reorganizado para meia tela Full HD.</li><li>Prevenção de sobreposição e rolagem horizontal.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.5.0</strong><span>Nova navegação lateral</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Menu superior substituído por sidebar organizada por grupos.</li><li>Pesquisa e controles de aparência integrados à navegação.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.6.1</strong><span>Correção do layout de Documentos</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Correções</h4><ul><li>Estado vazio deixou de ocupar espaço ao abrir um modelo.</li><li>Central de Documentos permaneceu com modelos editáveis e excluíveis.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.6</strong><span>Central de Documentos e preferências</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Alterações</h4><ul><li>Central de Documentos reorganizada em Modelos e Documento.</li><li>Nome de exibição unificado entre preferências e interface.</li><li>README consolidado para refletir o estado atual.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.5</strong><span>Sincronização automática e refinamentos</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Sincronização automática ao iniciar, focar, retornar à aba e recuperar conexão.</li><li>Duplo clique seleciona todo o CPF/CNPJ.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.4</strong><span>Suporte a CNPJ alfanumérico</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Validação e máscara compatíveis com CNPJ alfanumérico.</li><li>CNPJ numérico tradicional preservado.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.3</strong><span>Gestão global dos históricos sincronizados</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Limpeza local diferenciada da exclusão sincronizada.</li><li>Tombstones utilizados para propagação das exclusões.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.2.2</strong><span>Correção das exclusões sincronizadas</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Correções</h4><ul><li>Removidas colisões entre funções globais de exclusão.</li><li>Renderização local atualizada após merge remoto.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.2</strong><span>Exclusão sincronizada por registro</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Modelo de tombstones iniciado no histórico de CPF/CNPJ.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.1.4</strong><span>Padronização de históricos e UVRM</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Correções</h4><ul><li>Valor padrão da UVRM preservado no formato 5,2151.</li><li>Botões locais de limpar histórico removidos dos módulos.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.1.3</strong><span>Histórico de Datas e ajustes</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Alterações</h4><ul><li>Histórico local visível adicionado ao módulo Datas.</li><li>Valor padrão de UVRM ajustado para 5,2151.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.1.2</strong><span>Ordenação estável dos históricos</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Correções</h4><ul><li>Ordenação estável aplicada aos históricos locais e sincronizados.</li><li>Correções definitivas no histórico CPF/CNPJ.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.1</strong><span>Confiabilidade da sincronização</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Fila de repetição e recuperação após perda de conexão.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.4.0</strong><span>Histórico global sincronizado</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Histórico global integrado ao fluxo de sincronização.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.3.6</strong><span>Novo módulo CPF/CNPJ</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Módulo independente para CPF e CNPJ, com normalização, máscara e histórico local.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.3.5</strong><span>Novo módulo Datas</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Contagem, soma e subtração de dias em módulo próprio.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.3.4</strong><span>Reorganização da documentação</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Alterações</h4><ul><li>Documentação centralizada em docs/, releases em docs/releases/ e SQL em sql/.</li></ul></section>
+</div></div></article>
+                        <article class="about-version-item">
+                            <button class="about-version-toggle" type="button" aria-expanded="false">
+                                <span class="about-version-heading"><strong>4.3.0</strong><span>Base dos históricos online</span></span>
+                                <span class="about-version-chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="about-version-details" hidden><div class="about-version-detail-grid">
+<section><h4>Implementações</h4><ul><li>Fundação da tabela history_entries, RLS e serviço de históricos.</li></ul></section>
+</div></div></article>
+                    </div>
+                </section>
+
+                <div class="tab-footer-navigation">
+                    <button class="back-home-button" type="button" data-open-tab="inicio"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="app-footer">
+        <div class="app-footer-content">
+            <p><span data-app-name>Utilitários Municipais</span> • Versão <span data-app-version></span></p>
+            <div class="footer-sync-status" id="footerSyncStatus">
+                <span id="footerSyncDot" class="footer-sync-dot" data-state="local" aria-hidden="true"></span>
+                <strong id="footerSyncText">Somente local</strong>
+                <span id="footerSyncTime">Sem sincronização online</span>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="assets/js/core/config.js"></script>
+    <script src="assets/js/services/logger.js"></script>
+    <script src="assets/js/services/error-handler.js"></script>
+    <script src="assets/js/services/version-service.js"></script>
+    <script src="assets/js/services/backend-client.js"></script>
+    <script src="assets/js/registry/tools.js"></script>
+    <script src="assets/js/services/storage-service.js"></script>
+    <script src="assets/js/services/history-service.js"></script>
+    <script src="assets/js/services/online-sync-service.js"></script>   
+    <script src="assets/js/core/sidebar-45.js"></script>
+    <script src="assets/js/core/about-history-45.js"></script>
+    <script src="assets/js/core/storage.js"></script>
+    <script src="assets/js/core/utils.js"></script>
+    <script src="assets/js/components/notifications.js"></script>
+    <script src="assets/js/components/clipboard.js"></script>
+    <script src="assets/js/components/modal.js"></script>
+    <script src="assets/js/components/history.js"></script>
+    <script src="assets/js/core/validation.js"></script>
+    <script src="assets/js/components/component-library.js"></script>
+    <script src="assets/js/core/module-manager.js"></script>
+    <script src="assets/js/core/analytics.js"></script>
+    <script src="assets/js/core/navigation.js"></script>
+    <script src="assets/js/core/productivity.js"></script>
+    <script src="assets/js/modules/dashboard.js"></script>
+    <script src="assets/js/core/v3-dashboard.js"></script>
+    <script src="assets/js/modules/arquivo.js"></script>
+    <script src="assets/js/core/form-persistence.js"></script>
+    <script src="assets/js/modules/inscricao.js"></script>
+    <script src="assets/js/modules/cpf-cnpj.js"></script>
+    <script src="assets/js/modules/lotes.js"></script>
+    <script src="assets/js/modules/uvrm.js"></script>
+    <script src="assets/js/modules/percentual.js"></script>
+    <script src="assets/js/modules/datas.js"></script>
+    <script src="assets/js/modules/configuracoes.js"></script>
+    <script src="assets/js/modules/documentos.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/core/experience-31.js"></script>
+    <script src="assets/js/core/dashboard-32.js"></script>
+    <script src="assets/js/core/productivity-33.js"></script>
+    <script id="appVersionBinder4354">
+        document.querySelectorAll("[data-app-version]").forEach((el) => { el.textContent = window.APP_VERSION || ""; });
+    </script>
+    <script id="environmentBadgeDevInfra">
+        (() => {
+            const badge = document.getElementById("appEnvironmentBadge");
+            if (!badge) return;
+            const environment = window.APP_ENVIRONMENT || "production";
+            const isDevelopment = environment === "development";
+            badge.textContent = isDevelopment ? "DEV" : "";
+            badge.dataset.environment = environment;
+            badge.hidden = !isDevelopment;
+            const aboutEnvironment = document.getElementById("aboutDatabaseEnvironment");
+            if (aboutEnvironment) aboutEnvironment.textContent = isDevelopment ? "Desenvolvimento" : "Produção";
+            document.documentElement.dataset.appEnvironment = environment;
+        })();
+    </script>
+</body>
+</html>

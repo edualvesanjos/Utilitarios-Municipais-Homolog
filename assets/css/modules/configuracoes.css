@@ -1,0 +1,143 @@
+/* Configurações e backup — versão 1.9 */
+.settings-summary {
+    margin-top: 0;
+}
+
+.settings-card {
+    border: 1px solid #dce4ec;
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px;
+    margin-top: 18px;
+}
+
+.settings-card h3 {
+    margin-top: 0;
+}
+
+.settings-checklist {
+    display: grid;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.file-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.file-button input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.danger-zone {
+    border-color: #efc6c2;
+    background: #fffafa;
+}
+
+.settings-statistics-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 16px 0
+}
+
+.settings-statistics-summary>div {
+    border: 1px solid #e0e7ef;
+    border-radius: 10px;
+    background: #f8fafc;
+    padding: 12px
+}
+
+.settings-statistics-summary span {
+    display: block;
+    color: #617184;
+    font-size: .78rem
+}
+
+.settings-statistics-summary strong {
+    display: block;
+    margin-top: 5px;
+    color: #0f4c81;
+    font-size: 1.3rem
+}
+
+.statistics-table-wrap {
+    overflow: auto
+}
+
+.statistics-table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.statistics-table th,
+.statistics-table td {
+    border-bottom: 1px solid #e0e7ef;
+    padding: 10px;
+    text-align: left
+}
+
+.statistics-table th {
+    color: #617184;
+    font-size: .78rem;
+    text-transform: uppercase
+}
+
+.field-invalid {
+    border-color: #b42318 !important;
+    box-shadow: 0 0 0 2px rgba(180, 35, 24, .08)
+}
+
+.field-validation-message {
+    display: block;
+    margin-top: 5px;
+    color: #b42318;
+    font-size: .78rem
+}
+
+@media(max-width:600px) {
+    .settings-statistics-summary {
+        grid-template-columns: 1fr
+    }
+}
+
+/* Versão 4.2.5 — correção do aproveitamento horizontal em Configurações */
+#configuracoes .generator-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+}
+
+#configuracoes .builder-panel,
+#configuracoes .generator-sidebar {
+    width: 100%;
+    min-width: 0;
+}
+
+#configuracoes .generator-sidebar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+#configuracoes .generator-sidebar .sidebar-card {
+    margin: 0;
+}
+
+#configuracoes .ux-settings-panel,
+#configuracoes .online-settings-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    #configuracoes .generator-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
