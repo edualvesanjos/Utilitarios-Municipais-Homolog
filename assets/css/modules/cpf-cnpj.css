@@ -1,0 +1,9 @@
+#cpf-cnpj .registration-status{margin-top:16px}
+#cpf-cnpj .result-box strong{font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:.02em;word-break:break-word}
+#documentoFiscalStatus[data-state="valid"]{color:var(--success-color,#157347)}
+#documentoFiscalStatus[data-state="invalid"]{color:var(--danger-color,#b42318)}
+
+/* v4.3.6.1 */
+.document-copy-options .checkbox-row{display:inline-flex;align-items:center;gap:6px}
+.document-copy-options{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+#documentoFiscalHistorico li span{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}

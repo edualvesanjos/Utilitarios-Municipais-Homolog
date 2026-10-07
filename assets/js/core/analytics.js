@@ -1,0 +1,23 @@
+/* Núcleo: favoritos, catálogo, estatísticas e histórico global. */
+const ANALYTICS_KEY = `${APP_CONFIG.storagePrefix}analytics`;
+const FAVORITES_KEY = `${APP_CONFIG.storagePrefix}favorites`;
+const ACTIVITY_LOG_KEY = `${APP_CONFIG.storagePrefix}activityLog`;
+const RECENT_TOOLS_KEY = `${APP_CONFIG.storagePrefix}recentTools`;
+
+const TOOL_CATALOG = TOOL_REGISTRY;
+
+function emptyAnalytics() { return { accesses: {}, actions: {}, actionDetails: {}, lastUsed: {}, updatedAt: "" }; }
+function getAnalytics() { const value = getJson(ANALYTICS_KEY, emptyAnalytics()); return value && typeof value === "object" ? { ...emptyAnalytics(), ...value, accesses: value.accesses || {}, actions: value.actions || {}, actionDetails: value.actionDetails || {}, lastUsed: value.lastUsed || {} } : emptyAnalytics(); }
+function saveAnalytics(value) { value.updatedAt = new Date().toISOString(); setJson(ANALYTICS_KEY, value); }
+function addActivity(toolId, type, label) { const tool = TOOL_CATALOG.find(t => t.id === toolId); if (!tool) return; const log = getJson(ACTIVITY_LOG_KEY, []); const items = Array.isArray(log) ? log : []; items.unshift({ toolId, tool: tool.name, type, label: label || type, timestamp: new Date().toISOString() }); setJson(ACTIVITY_LOG_KEY, items.slice(0, 100)); }
+function rememberRecentTool(toolId) { if (toolId === "configuracoes") return; const recent = getJson(RECENT_TOOLS_KEY, []); setJson(RECENT_TOOLS_KEY, [toolId, ...(Array.isArray(recent) ? recent : []).filter(id => id !== toolId)].slice(0, 5)); }
+function trackToolAccess(toolId) { if (!TOOL_CATALOG.some(t => t.id === toolId)) return; const a = getAnalytics(); a.accesses[toolId] = (Number(a.accesses[toolId]) || 0) + 1; a.lastUsed[toolId] = new Date().toISOString(); saveAnalytics(a); rememberRecentTool(toolId); addActivity(toolId, "access", "Módulo acessado"); refreshUsageViews(); }
+function trackToolAction(toolId, actionId = "action") { if (!TOOL_CATALOG.some(t => t.id === toolId)) return; const a = getAnalytics(); a.actions[toolId] = (Number(a.actions[toolId]) || 0) + 1; a.actionDetails[toolId] = a.actionDetails[toolId] || {}; a.actionDetails[toolId][actionId] = (Number(a.actionDetails[toolId][actionId]) || 0) + 1; a.lastUsed[toolId] = new Date().toISOString(); saveAnalytics(a); addActivity(toolId, "action", humanizeAction(actionId)); refreshUsageViews(); }
+function humanizeAction(id) { return String(id || "Ação realizada").replace(/([a-z])([A-Z])/g, "$1 $2").replace(/[-_]/g, " ").replace(/^./, c => c.toUpperCase()); }
+function getFavorites() { const value = getJson(FAVORITES_KEY, []); return Array.isArray(value) ? value.filter(id => TOOL_CATALOG.some(t => t.id === id)) : []; }
+function isFavorite(toolId) { return getFavorites().includes(toolId); }
+function toggleFavorite(toolId) { let favorites = getFavorites(); favorites = favorites.includes(toolId) ? favorites.filter(id => id !== toolId) : [...favorites, toolId]; setJson(FAVORITES_KEY, favorites); renderDashboardFavorites(); refreshUsageViews(); NotificationService.success(favorites.includes(toolId) ? "Ferramenta adicionada aos favoritos." : "Ferramenta removida dos favoritos."); }
+function getUsageSummary() { const a = getAnalytics(), favorites = getFavorites(); const rows = TOOL_CATALOG.map(tool => ({ tool, ...tool, accesses: Number(a.accesses[tool.id]) || 0, actions: Number(a.actions[tool.id]) || 0, lastUsed: a.lastUsed[tool.id] || "" })); const totalAccesses = rows.reduce((s, r) => s + r.accesses, 0), totalActions = rows.reduce((s, r) => s + r.actions, 0); const mostUsed = [...rows].sort((x, y) => (y.accesses + y.actions) - (x.accesses + x.actions))[0]; return { rows, totalAccesses, totalActions, favoriteCount: favorites.length, mostUsed: mostUsed && mostUsed.accesses + mostUsed.actions > 0 ? mostUsed.name : "Nenhuma" }; }
+function refreshUsageViews() { if (typeof updateDashboardUsageIndicators === "function") updateDashboardUsageIndicators(); if (typeof renderDashboardSmartTools === "function") renderDashboardSmartTools(); if (typeof renderDashboardRecentItems === "function") renderDashboardRecentItems(); if (typeof updateSettingsStatistics === "function") updateSettingsStatistics(); }
+function resetUsageStatistics() { localStorage.removeItem(ANALYTICS_KEY); localStorage.removeItem(ACTIVITY_LOG_KEY); localStorage.removeItem(RECENT_TOOLS_KEY); refreshUsageViews(); }
+document.addEventListener("click", event => { const button = event.target.closest(".tab-panel button, .tab-panel .file-button"); if (!button || button.matches("[data-open-tab], .favorite-toggle, #dashboardRefresh, #resetarEstatisticas")) return; const panel = button.closest(".tab-panel"); if (panel && TOOL_CATALOG.some(t => t.id === panel.id)) trackToolAction(panel.id, button.id || "action"); });

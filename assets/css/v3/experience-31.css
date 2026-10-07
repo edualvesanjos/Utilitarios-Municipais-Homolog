@@ -1,0 +1,546 @@
+/* Versão 3.1 — camada de experiência do usuário */
+:root {
+    --ux-accent: #0f4c81;
+    --ux-bg: #eef3f8;
+    --ux-surface: #fff;
+    --ux-text: #172033;
+    --ux-muted: #607086;
+    --ux-border: #d7e1eb;
+    --ux-shadow: 0 18px 50px rgba(16, 39, 63, .18)
+}
+
+body[data-theme="dark"] {
+    --ux-bg: #101820;
+    --ux-surface: #18232e;
+    --ux-text: #edf4fa;
+    --ux-muted: #a9b8c7;
+    --ux-border: #344554;
+    --ux-shadow: 0 18px 50px rgba(0, 0, 0, .42);
+    background: var(--ux-bg);
+    color: var(--ux-text)
+}
+
+body[data-theme="contrast"] {
+    --ux-bg: #000;
+    --ux-surface: #000;
+    --ux-text: #fff;
+    --ux-muted: #fff;
+    --ux-border: #fff;
+    --ux-accent: #ffdf00;
+    background: #000;
+    color: #fff
+}
+
+body[data-theme="dark"] .card,
+body[data-theme="dark"] .settings-card,
+body[data-theme="dark"] .sidebar-card,
+body[data-theme="dark"] .dashboard-search-card,
+body[data-theme="dark"] input,
+body[data-theme="dark"] select,
+body[data-theme="dark"] textarea,
+body[data-theme="dark"] .dashboard-tool-card {
+    background: var(--ux-surface);
+    color: var(--ux-text);
+    border-color: var(--ux-border)
+}
+
+body[data-theme="contrast"] * {
+    box-shadow: none !important
+}
+
+body[data-theme="contrast"] button,
+body[data-theme="contrast"] input,
+body[data-theme="contrast"] select,
+body[data-theme="contrast"] textarea,
+body[data-theme="contrast"] .card,
+body[data-theme="contrast"] .settings-card,
+body[data-theme="contrast"] .sidebar-card {
+    background: #000 !important;
+    color: #fff !important;
+    border: 2px solid #fff !important
+}
+
+body[data-theme="contrast"] button.active,
+body[data-theme="contrast"] .primary {
+    background: #ffdf00 !important;
+    color: #000 !important
+}
+
+body.ux-compact .card {
+    padding: 16px
+}
+
+body.ux-compact .tab-panel {
+    gap: 12px
+}
+
+body.ux-compact input,
+body.ux-compact select,
+body.ux-compact button {
+    min-height: 34px;
+    padding-top: 7px;
+    padding-bottom: 7px
+}
+
+body.ux-compact .dashboard-hero {
+    padding: 18px
+}
+
+body.ux-font-large {
+    font-size: 18px
+}
+
+
+.ux-command-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 18, 28, .58);
+    z-index: 9998;
+    display: grid;
+    place-items: start center;
+    padding-top: min(12vh, 100px)
+}
+
+.ux-command-overlay[hidden] {
+    display: none
+}
+
+.ux-command {
+    width: min(680px, calc(100% - 28px));
+    background: var(--ux-surface);
+    color: var(--ux-text);
+    border: 1px solid var(--ux-border);
+    border-radius: 16px;
+    box-shadow: var(--ux-shadow);
+    overflow: hidden
+}
+
+.ux-command input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--ux-border);
+    border-radius: 0;
+    padding: 17px 19px;
+    font-size: 1.05rem;
+    background: transparent;
+    color: inherit
+}
+
+.ux-command-results {
+    max-height: 55vh;
+    overflow: auto;
+    padding: 8px
+}
+
+.ux-command-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 11px 12px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: inherit
+}
+
+.ux-command-item:hover,
+.ux-command-item.selected {
+    background: rgba(15, 76, 129, .12)
+}
+
+.ux-command-item small {
+    color: var(--ux-muted)
+}
+
+.ux-toolbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 14px
+}
+
+.ux-toolbar select,
+.ux-toolbar button {
+    min-height: 38px
+}
+
+.ux-help-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    padding: 0;
+    display: grid;
+    place-items: center
+}
+
+.ux-help-dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(7, 18, 28, .55);
+    display: grid;
+    place-items: center
+}
+
+.ux-help-dialog[hidden] {
+    display: none
+}
+
+.ux-help-card {
+    width: min(620px, calc(100% - 28px));
+    max-height: 82vh;
+    overflow: auto;
+    background: var(--ux-surface);
+    color: var(--ux-text);
+    border: 1px solid var(--ux-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--ux-shadow)
+}
+
+.ux-help-card header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px
+}
+
+.ux-help-card button {
+    align-self: start
+}
+
+.ux-personalize {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px
+}
+
+.ux-personalize label {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.dashboard-tools[data-layout="list"] {
+    grid-template-columns: 1fr
+}
+
+.dashboard-tools[data-layout="compact"] {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr))
+}
+
+.dashboard-tools[data-layout="compact"] .dashboard-tool-card {
+    padding: 10px
+}
+
+.dashboard-tools[data-layout="compact"] small {
+    display: none
+}
+
+.ux-hidden-widget {
+    display: none !important
+}
+
+.tab-panel.active {
+    animation: uxFade .16s ease-out
+}
+
+@keyframes uxFade {
+    from {
+        opacity: .25;
+        transform: translateY(4px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@media(max-width:720px) {
+    .ux-personalize {
+        grid-template-columns: 1fr
+    }
+
+    .ux-command-overlay {
+        padding-top: 20px
+    }
+}
+
+
+/* Revisão 3.1.1 — personalização centralizada em Configurações */
+.ux-settings-panel {
+    margin-top: 0
+}
+
+.ux-settings-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 16px
+}
+
+.ux-settings-group {
+    min-width: 0;
+    margin: 0;
+    padding: 16px;
+    border: 1px solid var(--ux-border, #d7e1eb);
+    border-radius: 12px;
+    background: rgba(248, 250, 252, .72)
+}
+
+.ux-settings-group legend {
+    padding: 0 7px;
+    color: var(--ux-text, #172033);
+    font-weight: 800
+}
+
+.ux-setting-field {
+    display: grid;
+    gap: 7px;
+    margin: 0
+}
+
+.ux-setting-field>span,
+.ux-setting-title {
+    color: var(--ux-text, #172033);
+    font-weight: 700
+}
+
+.ux-setting-field select {
+    width: 100%;
+    max-width: 280px
+}
+
+.ux-setting-block {
+    margin-top: 18px
+}
+
+.ux-widget-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 18px;
+    margin-top: 10px
+}
+
+.ux-widget-options .checkbox-row,
+.ux-compact-option {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
+    margin: 0;
+    min-height: 34px;
+    font-weight: 600
+}
+
+.ux-widget-options .checkbox-row input,
+.ux-compact-option input {
+    flex: 0 0 auto;
+    margin: 0
+}
+
+.ux-interface-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px
+}
+
+.ux-color-field {
+    grid-column: 1/-1
+}
+
+.ux-color-field input[type="color"] {
+    width: 64px;
+    height: 40px;
+    padding: 3px;
+    cursor: pointer
+}
+
+.ux-compact-option {
+    margin-top: 17px
+}
+
+body[data-theme="dark"] .ux-settings-group {
+    background: rgba(24, 35, 46, .7)
+}
+
+body[data-theme="contrast"] .ux-settings-group {
+    background: #000 !important
+}
+
+@media(max-width:900px) {
+    .ux-settings-groups {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width:600px) {
+
+    .ux-widget-options,
+    .ux-interface-grid {
+        grid-template-columns: 1fr
+    }
+
+    .ux-color-field {
+        grid-column: auto
+    }
+
+    .ux-setting-field select {
+        max-width: none
+    }
+}
+
+/* Revisão 3.1.2 — navegação principal com menu suspenso */
+.ux-main-navigation {
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative
+}
+
+.ux-nav-primary,
+.ux-tools-menu-button {
+    white-space: nowrap
+}
+
+.ux-tools-menu {
+    position: relative;
+    flex: 0 0 auto
+}
+
+.ux-tools-menu-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px
+}
+
+.ux-tools-menu-button.active {
+    background: var(--ux-accent, #0f4c81);
+    color: #fff
+}
+
+.ux-tools-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 1200;
+    width: min(340px, calc(100vw - 28px));
+    max-height: min(70vh, 560px);
+    overflow: auto;
+    padding: 8px;
+    background: var(--ux-surface, #fff);
+    color: var(--ux-text, #172033);
+    border: 1px solid var(--ux-border, #d7e1eb);
+    border-radius: 14px;
+    box-shadow: var(--ux-shadow);
+}
+
+.ux-tools-dropdown[hidden] {
+    display: none
+}
+
+.ux-tools-group {
+    display: grid;
+    gap: 3px;
+    padding: 8px
+}
+
+.ux-tools-group+.ux-tools-group {
+    border-top: 1px solid var(--ux-border, #d7e1eb)
+}
+
+.ux-tools-group>strong {
+    padding: 5px 9px;
+    color: var(--ux-muted, #607086);
+    font-size: .76rem;
+    letter-spacing: .055em;
+    text-transform: uppercase
+}
+
+.ux-tools-group .tab-button {
+    width: 100%;
+    display: block;
+    text-align: left;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 11px;
+    background: transparent;
+    color: inherit
+}
+
+.ux-tools-group .tab-button:hover,
+.ux-tools-group .tab-button:focus-visible,
+.ux-tools-group .tab-button.active {
+    background: rgba(15, 76, 129, .12);
+    color: inherit;
+    outline: none
+}
+
+body[data-theme="dark"] .ux-tools-dropdown {
+    background: var(--ux-surface);
+    border-color: var(--ux-border)
+}
+
+body[data-theme="contrast"] .ux-tools-dropdown {
+    background: #000 !important;
+    color: #fff !important;
+    border: 2px solid #fff !important
+}
+
+body[data-theme="contrast"] .ux-tools-menu-button.active {
+    background: #ffdf00 !important;
+    color: #000 !important
+}
+
+@media(max-width:650px) {
+    .ux-main-navigation {
+        flex-wrap: wrap
+    }
+
+    .ux-tools-menu {
+        position: static
+    }
+
+    .ux-tools-dropdown {
+        left: 0;
+        right: 0;
+        width: auto;
+        top: 100%
+    }
+}
+
+/* 3.4.2 — nome de exibição */
+.ux-display-name-field { margin-bottom:16px }
+.ux-display-name-field input { width:100% }
+.ux-display-name-field small { display:block; margin-top:5px; font-weight:400 }
+
+/* v4.3.5.2 — seletor de cor principal com aplicação explícita */
+.ux-color-apply-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ux-color-apply-row #uxAccent {
+    flex: 1 1 auto;
+    min-width: 64px;
+}
+.ux-color-apply-row #uxAccentApply {
+    flex: 0 0 auto;
+    min-height: 40px;
+}
+#uxAccentFeedback.success {
+    color: var(--success-color, #157347);
+    font-weight: 600;
+}
+
+/* v4.3.5.3 */
+.ux-color-apply-row { display:flex; align-items:center; gap:8px; }
+.ux-color-apply-row #uxAccent { flex:0 0 auto !important; width:56px !important; min-width:56px !important; max-width:56px !important; height:38px; padding:2px; }
+.ux-color-apply-row #uxAccentApply { flex:0 0 auto !important; min-height:38px; padding:8px 14px; white-space:nowrap; }
+
+/* v4.3.5.4 */
+#uxInterfaceFeedback.success{color:var(--success-color,#157347);font-weight:600;}

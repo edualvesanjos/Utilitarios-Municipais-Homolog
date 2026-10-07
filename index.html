@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#0f4c81" name="theme-color"/>
+<title>Utilitários Municipais</title>
+<link href="./assets/favicon-CaMZHG1G.ico" rel="icon" sizes="any"/>
+<link href="./assets/favicon-32x32-DsjCTVK_.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="./assets/favicon-16x16-dsDt5ikR.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="./assets/apple-touch-icon-C8NtRBng.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="./assets/manifest-DexZCBFJ.json" rel="manifest"/>
+  <script type="module" crossorigin src="./assets/index-Cwr1IbYh.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-gQaPuPvx.css">
+</head>
+<body>
+<header class="app-header app-header-v32">
+<div class="header-content header-content-v32">
+<div class="v32-brand">
+<span aria-hidden="true" class="v32-brand-icon">🏛</span>
+<div><h1 data-app-name="">Utilitários Municipais</h1><small>Ferramentas internas</small></div>
+<span class="v32-version">v<span data-app-version=""></span></span><span class="app-environment-badge" hidden="" id="appEnvironmentBadge"></span>
+</div>
+<div class="header-account v45-header-account" id="headerAccount">
+<button aria-controls="headerAccountMenu" aria-expanded="false" aria-haspopup="true" aria-label="Conta e sincronização" class="header-account-button v45-header-account-button" id="headerAccountButton" title="Conta e sincronização" type="button">
+<span aria-hidden="true" class="v45-profile-icon">
+<svg focusable="false" viewbox="0 0 24 24">
+<path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0v1H5v-1Z"></path>
+</svg>
+<span aria-hidden="true" class="header-account-dot" data-state="local" id="headerAccountDot"></span>
+</span>
+</button>
+<div class="header-account-menu v45-header-account-menu" hidden="" id="headerAccountMenu">
+<div class="header-account-identity">
+<span class="eyebrow">Conta</span>
+<strong id="headerAccountMenuName">Não conectado</strong>
+<small id="headerAccountEmail">Use o armazenamento local ou entre em uma conta.</small>
+</div>
+<div class="header-account-menu-status">
+<span aria-hidden="true" class="header-account-dot" data-state="local" id="headerMenuStatusDot"></span>
+<span id="headerMenuStatusText">Somente local</span>
+</div>
+<div class="header-account-menu-actions" data-header-authenticated="" hidden="">
+<button id="headerAccountSettings" type="button">Conta e sincronização</button>
+<button id="headerSyncNow" type="button">Sincronizar agora</button>
+<button class="header-signout" id="headerSignOut" type="button">Sair da conta</button>
+</div>
+<div class="header-account-menu-actions" data-header-anonymous="">
+<button class="header-signin" id="headerSignIn" type="button">Entrar ou criar conta</button>
+</div>
+</div>
+</div>
+<button aria-controls="v45Sidebar" aria-expanded="false" aria-label="Abrir menu" class="v45-mobile-menu-button" id="v45MobileMenuButton" type="button">
+<span aria-hidden="true">☰</span>
+</button>
+</div>
+</header>
+<main class="app-container">
+<nav aria-label="Navegação principal" class="tabs ux-main-navigation v45-sidebar" id="v45Sidebar">
+<div class="v45-sidebar-top">
+<button aria-label="Recolher menu" aria-pressed="false" class="v45-sidebar-collapse" id="v45SidebarCollapse" title="Recolher menu" type="button">
+<span aria-hidden="true" class="v45-collapse-icon">
+<svg focusable="false" viewbox="0 0 24 24">
+<path d="M14.5 6.5 9 12l5.5 5.5"></path>
+<path d="M19 4v16"></path>
+</svg>
+</span>
+<span class="v45-collapse-label">Recolher</span>
+</button>
+</div>
+<div class="v45-sidebar-search">
+<label class="v32-top-search">
+<span aria-hidden="true" class="nav-svg-icon" data-static-icon="search"></span>
+<input autocomplete="off" id="dashboardToolSearch" placeholder="Pesquisar ferramentas..." type="search"/>
+<kbd>Ctrl + K</kbd>
+<div aria-live="polite" class="dashboard-search-results" id="dashboardSearchResults"></div>
+</label>
+</div>
+<div class="v45-sidebar-scroll">
+<section class="v45-nav-section">
+<button class="tab-button ux-nav-primary active" data-tab="inicio" type="button">
+<span class="menu-tool-icon" data-tool-icon="home"></span>
+<span>Início</span>
+</button>
+</section>
+<section class="v45-nav-section">
+<strong class="v45-nav-heading">Documentos</strong>
+<button class="tab-button ux-nav-primary" data-tab="central-documentos" type="button">
+<span class="menu-tool-icon" data-tool-icon="documents"></span>
+<span>Central de documentos</span>
+</button>
+<button class="tab-button ux-nav-primary" data-tab="arquivo" type="button">
+<span class="menu-tool-icon" data-tool-icon="file"></span>
+<span>Nome de arquivo</span>
+</button>
+</section>
+<section class="v45-nav-section">
+<strong class="v45-nav-heading">Cadastros</strong>
+<button class="tab-button ux-nav-primary" data-tab="inscricao" type="button">
+<span class="menu-tool-icon" data-tool-icon="building"></span>
+<span>Inscrição imobiliária</span>
+</button>
+<button class="tab-button ux-nav-primary" data-tab="cpf-cnpj" type="button">
+<span class="menu-tool-icon" data-tool-icon="idcard"></span>
+<span>CPF / CNPJ</span>
+</button>
+<button class="tab-button ux-nav-primary" data-tab="lote" type="button">
+<span class="menu-tool-icon" data-tool-icon="grid"></span>
+<span>Número de lote</span>
+</button>
+</section>
+<section class="v45-nav-section">
+<strong class="v45-nav-heading">Cálculos</strong>
+<button class="tab-button ux-nav-primary" data-tab="uvrm" type="button">
+<span class="menu-tool-icon" data-tool-icon="coins"></span>
+<span>Calculadora UVRM</span>
+</button>
+<button class="tab-button ux-nav-primary" data-tab="percentual" type="button">
+<span class="menu-tool-icon" data-tool-icon="percent"></span>
+<span>Percentual</span>
+</button>
+<button class="tab-button ux-nav-primary" data-tab="datas" type="button">
+<span class="menu-tool-icon" data-tool-icon="calendar"></span>
+<span>Datas</span>
+</button>
+</section>
+<section class="v45-nav-section">
+<strong class="v45-nav-heading">Produtividade</strong>
+<button class="tab-button ux-nav-primary" data-tab="biblioteca" type="button">
+<span class="menu-tool-icon" data-tool-icon="library"></span>
+<span>Biblioteca</span>
+</button>
+<button class="tab-button ux-nav-primary" data-tab="historico-global" type="button">
+<span class="menu-tool-icon" data-tool-icon="history"></span>
+<span>Histórico global</span>
+</button>
+</section>
+<section class="v45-nav-section">
+<strong class="v45-nav-heading">Sistema</strong>
+<button class="tab-button ux-nav-primary" data-tab="configuracoes" type="button">
+<span class="menu-tool-icon" data-tool-icon="settings"></span>
+<span>Configurações</span>
+</button>
+<button class="tab-button ux-nav-primary" data-tab="sobre" type="button">
+<span class="menu-tool-icon" data-tool-icon="info"></span>
+<span>Sobre</span>
+</button>
+</section>
+</div>
+<div class="v45-sidebar-footer">
+<div aria-label="Ações de aparência" class="v32-header-actions">
+<button id="v32ThemeToggle" title="Alternar tema" type="button">
+<span aria-hidden="true">◐</span>
+<span class="v45-footer-label">Tema</span>
+</button>
+<button id="v32FontToggle" title="Alternar tamanho da fonte" type="button">
+<span aria-hidden="true">Aᴬ</span>
+<span class="v45-footer-label">Fonte</span>
+</button>
+</div>
+</div>
+</nav>
+<div class="v45-sidebar-backdrop" hidden="" id="v45SidebarBackdrop"></div>
+<section class="tab-panel active v32-dashboard" id="inicio">
+<div class="v32-dashboard-grid">
+<main class="v32-dashboard-main">
+<section class="v32-welcome card">
+<div><div class="dashboard-greeting-line"><span class="eyebrow">Painel principal</span></div><h2 id="dashboardGreeting">Olá, Usuário!</h2><p>Bem-vindo aos Utilitários Municipais.</p><p>Use a pesquisa, a paleta de comandos (<strong>Ctrl + Espaço</strong>) ou acesse uma ferramenta abaixo.</p></div>
+<div aria-hidden="true" class="v32-welcome-art"><span>▥</span><span>▦</span><span>⌨</span></div>
+</section>
+<section class="v32-section card" id="dashboardFavoritesSection">
+<div class="section-heading"><div><h3>Acesso rápido</h3><p class="mini-description">Favoritos e ferramentas disponíveis.</p></div><button class="text-button" id="v32ShowAllTools" type="button">Ver todas</button></div>
+<div class="dashboard-tools dashboard-favorite-tools" id="dashboardFavoriteTools"></div>
+<div aria-label="Ferramentas disponíveis" class="dashboard-tools v32-all-tools" id="dashboardAllTools"></div>
+</section>
+<section class="v32-section card">
+<div class="section-heading"><div><h3>Continuar de onde parou</h3><p class="mini-description">Ferramentas utilizadas recentemente.</p></div></div>
+<div class="dashboard-smart-tools v32-recent-tools" id="dashboardRecentTools"></div>
+<div class="dashboard-smart-tools" hidden="" id="dashboardMostUsedTools"></div>
+</section>
+<section class="v32-section card dashboard-recent-card">
+<div class="section-heading"><div><h3>Atividades recentes</h3><p class="mini-description">Últimos cálculos e ações armazenados neste navegador.</p></div><button class="text-button" id="dashboardRefresh" type="button">Atualizar</button></div>
+<ul class="dashboard-recent-list" id="dashboardRecentList"></ul>
+</section>
+<div class="dashboard-summary-grid v32-hidden-data" hidden="">
+<span id="dashboardFileModels">0</span><span id="dashboardFileHistory">0</span><span id="dashboardRegistrationHistory">0</span><span id="dashboardLotHistory">0</span><span id="dashboardUvrmHistory">0</span><span id="dashboardPercentageHistory">0</span><span id="dashboardNextLotSequence">1</span><span id="dashboardUvrmValue">R$ 0,00</span><span id="dashboardLastBackup">Nenhum</span>
+</div>
+<div hidden="" id="dashboardToolCategories"></div>
+</main>
+<aside class="v32-dashboard-side">
+<section class="card v32-side-card">
+<div class="section-heading"><h3>Indicadores</h3><small>Dados locais</small></div>
+<div class="v32-indicators">
+<div><span class="v32-indicator-icon">▣</span><p>Ferramentas disponíveis<strong id="v32ToolCount">0</strong></p></div>
+<div><span class="v32-indicator-icon">★</span><p>Favoritos<strong id="dashboardFavoriteCount">0</strong></p></div>
+<div><span class="v32-indicator-icon">▦</span><p>Ações realizadas<strong id="dashboardTotalActions">0</strong></p></div>
+<div><span class="v32-indicator-icon">↗</span><p>Acessos aos módulos<strong id="dashboardTotalAccesses">0</strong></p></div>
+</div>
+<p class="v32-most-used">Mais utilizada: <strong id="dashboardMostUsedTool">Nenhuma</strong></p>
+</section>
+<section class="card v32-side-card"><div class="section-heading"><h3>Atalhos de teclado</h3></div><dl class="v32-shortcuts"><div><dt>Ctrl + Espaço</dt><dd>Paleta de comandos</dd></div><div><dt>Ctrl + K</dt><dd>Pesquisar</dd></div><div><dt>F1</dt><dd>Ajuda</dd></div><div><dt>Esc</dt><dd>Fechar pesquisa</dd></div></dl></section>
+<section class="card v32-side-card"><div class="section-heading"><h3>Dica rápida</h3></div><p id="v32Tip">Marque as ferramentas mais utilizadas como favoritas para encontrá-las no acesso rápido.</p></section>
+<section class="card v32-side-card v32-storage-card"><div class="section-heading"><h3>Dados do sistema</h3></div><p>Armazenamento local ativo</p><p>Último backup: <strong id="v32LastBackup">Nenhum backup</strong></p></section>
+</aside>
+</div>
+</section>
+<section class="tab-panel" id="arquivo">
+<div class="card">
+<div class="section-heading main-heading">
+<div>
+<h2>Montador de nome de arquivo</h2>
+<p class="section-description">
+                            Ative, desative e reorganize os blocos que formarão o nome final.
+                        </p>
+</div>
+</div>
+<div class="generator-grid">
+<section class="builder-panel">
+<h3>Dados do arquivo</h3>
+<div class="grid two-columns">
+<label>
+                                Nome
+                                <input id="arquivoNome" placeholder="Ex.: Nome da Pessoa ou Razão Social" type="text"/>
+</label>
+<label>
+                                Número do processo
+                                <input id="arquivoProcesso" placeholder="Ex.: 22667/2026" type="text"/>
+</label>
+</div>
+<div class="grid two-columns">
+<label>
+                                Prefixo
+                                <input id="arquivoPrefixo" placeholder="Ex.: DAE" type="text"/>
+</label>
+<label>
+                                Separador
+                                <select id="arquivoSeparador">
+<option value="_">Sublinhado (_)</option>
+<option value="-">Hífen (-)</option>
+<option value=".">Ponto (.)</option>
+<option value=" ">Espaço</option>
+<option value="">Sem separador</option>
+</select>
+</label>
+</div>
+<div class="options-panel">
+<label class="checkbox-row">
+<input checked="" id="arquivoRemoverPontos" type="checkbox"/>
+                                    Remover pontos (.) dos números
+                                </label>
+<label class="checkbox-row">
+<input id="arquivoAnaliseProjeto" type="checkbox"/>
+                                Análise de projeto
+                            </label>
+<label class="checkbox-row">
+<input id="arquivoDataHora" type="checkbox"/>
+                                Incluir data/hora
+                            </label>
+</div>
+<div class="preview-card">
+<span>Pré-visualização</span>
+<strong id="arquivoPreview">—</strong>
+</div>
+<div class="actions">
+<button class="primary" id="copiarArquivoPreview">Copiar nome</button>
+<button class="secondary" id="salvarModeloArquivo">Salvar modelo</button>
+<button class="secondary" id="limparArquivo">Limpar campos</button>
+</div>
+<p aria-live="polite" class="feedback" id="arquivoMensagem"></p>
+<div class="builder-section">
+<div class="section-heading">
+<div>
+<h3>Blocos disponíveis</h3>
+<p class="mini-description">
+                                        Marque os blocos que devem compor o nome.
+                                    </p>
+</div>
+</div>
+<div class="available-blocks" id="arquivoBlocosDisponiveis"></div>
+</div>
+<div class="builder-section">
+<div class="section-heading">
+<div>
+<h3>Ordem dos blocos</h3>
+<p class="mini-description">
+                                        Use os botões para reorganizar.
+                                    </p>
+</div>
+</div>
+<ol class="block-order-list" id="arquivoOrdemBlocos"></ol>
+</div>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button">
+<span aria-hidden="true">←</span>
+                    Voltar para a Página Inicial
+                </button>
+</div>
+</section>
+<aside class="generator-sidebar">
+<section class="sidebar-card">
+<div class="section-heading">
+<h3>Modelos salvos</h3>
+<button class="text-button" id="limparModelosArquivo">Limpar</button>
+</div>
+<label class="compact-field">
+                                Nome do modelo
+                                <input id="arquivoNomeModelo" placeholder="Ex.: Análise de projeto" type="text"/>
+</label>
+<ul class="history-list compact-list" id="arquivoModelos">
+<li class="empty-state">Nenhum modelo salvo.</li>
+</ul>
+</section>
+<section class="sidebar-card">
+<div class="section-heading">
+<h3>Histórico recente</h3>
+</div>
+<ul class="history-list compact-list" id="arquivoHistorico">
+<li class="empty-state">Nenhum nome copiado recentemente.</li>
+</ul>
+</section>
+</aside>
+</div>
+</div>
+</section>
+<section class="tab-panel" id="inscricao">
+<div class="card">
+<div class="section-heading main-heading">
+<div>
+<h2>Padrão de inscrição imobiliária</h2>
+<p class="section-description">
+                            Cole ou digite a inscrição em qualquer formato; o sistema identifica e normaliza automaticamente.
+                        </p>
+</div>
+</div>
+<div class="registration-layout">
+<section class="registration-panel">
+<div aria-label="Tipo de inscrição" class="registration-type-selector" role="radiogroup">
+<label class="registration-type-option">
+<input checked="" name="inscricaoTipo" type="radio" value="auto"/>
+<span>Detectar automaticamente</span>
+</label>
+<label class="registration-type-option">
+<input name="inscricaoTipo" type="radio" value="urbano"/>
+<span>Urbano</span>
+</label>
+<label class="registration-type-option">
+<input name="inscricaoTipo" type="radio" value="itr"/>
+<span>ITR</span>
+</label>
+</div>
+<label>
+                            Inscrição
+                            <input autocomplete="off" id="inscricaoValor" inputmode="numeric" placeholder="Cole ou digite a inscrição" type="text"/>
+</label>
+<div class="registration-status">
+<div>
+<span class="status-label">Tipo identificado</span>
+<strong id="inscricaoTipoDetectado">Aguardando</strong>
+</div>
+<div>
+<span class="status-label">Quantidade de números</span>
+<strong id="inscricaoContagem">0</strong>
+</div>
+<div>
+<span class="status-label">Situação</span>
+<strong id="inscricaoStatus">Aguardando</strong>
+</div>
+</div>
+<p class="help-text" id="inscricaoAjuda">
+                            O padrão urbano possui 17 números e o ITR possui 13 números.
+                        </p>
+<div class="preview-card registration-preview">
+<span>Inscrição normalizada</span>
+<strong id="inscricaoPreview">—</strong>
+</div>
+<div class="actions">
+<button class="primary" id="copiarInscricao">Copiar inscrição</button>
+<button class="secondary" id="copiarInscricaoSemMascara">Copiar somente números</button>
+<button class="secondary" id="limparInscricao">Limpar</button>
+</div>
+<label class="checkbox-row registration-auto-copy">
+<input id="inscricaoCopiaAutomatica" type="checkbox"/>
+                            Copiar automaticamente quando a inscrição estiver completa
+                        </label>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button">
+<span aria-hidden="true">←</span>
+                    Voltar para a Página Inicial
+                </button>
+</div>
+</section>
+<aside class="generator-sidebar">
+<section class="sidebar-card">
+<div class="section-heading">
+<h3>Histórico recente</h3>
+</div>
+<ul class="history-list compact-list" id="inscricaoHistorico">
+<li class="empty-state">Nenhuma inscrição copiada recentemente.</li>
+</ul>
+</section>
+<section class="sidebar-card">
+<h3>Formatos aceitos</h3>
+<div class="format-examples">
+<div>
+<span>Urbano</span>
+<code>00.000.000.00.0000000</code>
+</div>
+<div>
+<span>ITR</span>
+<code>000.000.000.000-0</code>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</section>
+<section class="tab-panel" id="cpf-cnpj">
+<div class="card">
+<div class="section-heading main-heading">
+<div>
+<h2>CPF / CNPJ</h2>
+<p class="section-description">Normalize, valide e copie CPF, CNPJ numérico e CNPJ alfanumérico com máscaras automáticas.</p>
+</div>
+</div>
+<div class="generator-grid">
+<section class="builder-panel">
+<div aria-label="Tipo de documento" class="registration-type-selector" role="radiogroup">
+<label class="registration-type-option">
+<input checked="" name="documentoFiscalTipo" type="radio" value="auto"/>
+<span>Detectar automaticamente</span>
+</label>
+<label class="registration-type-option">
+<input name="documentoFiscalTipo" type="radio" value="cnpj"/>
+<span>CNPJ</span>
+</label>
+<label class="registration-type-option">
+<input name="documentoFiscalTipo" type="radio" value="cpf"/>
+<span>CPF</span>
+</label>
+</div>
+<label>CPF ou CNPJ
+                            <input autocapitalize="characters" autocomplete="off" id="documentoFiscalEntrada" inputmode="text" maxlength="18" placeholder="Digite ou cole o CPF/CNPJ" spellcheck="false" type="text"/>
+</label>
+<div class="document-copy-options">
+<label class="checkbox-row"><input id="documentoFiscalAutoCopy" type="checkbox"/> Copiar automaticamente</label>
+<label class="checkbox-row"><input id="documentoFiscalSemMascara" type="checkbox"/> Sem máscara</label>
+</div>
+<div class="registration-status">
+<div><span class="status-label">Tipo detectado</span><strong id="documentoFiscalTipoDetectado">—</strong></div>
+<div><span class="status-label">Situação</span><strong id="documentoFiscalStatus">Aguardando</strong></div>
+</div>
+<div class="result-box"><span>Documento normalizado</span><strong id="documentoFiscalResultado">—</strong></div>
+<p aria-live="polite" class="feedback-message" id="documentoFiscalFeedback"></p>
+<div class="actions">
+<button class="primary" disabled="" id="copiarDocumentoFiscal" type="button">Copiar</button>
+<button class="secondary" id="limparDocumentoFiscal" type="button">Limpar</button>
+</div>
+</section>
+<aside class="generator-sidebar">
+<section class="sidebar-card">
+<div class="section-heading"><h3>Histórico local</h3></div>
+<ul class="history-list compact-list" id="documentoFiscalHistorico"><li class="empty-state">Nenhum documento normalizado recentemente.</li></ul>
+</section>
+<section class="sidebar-card">
+<h3>Formatos</h3>
+<div class="format-examples">
+<div><span>CPF</span><code>000.000.000-00</code></div>
+<div><span>CNPJ numérico</span><code>00.000.000/0000-00</code></div>
+<div><span>CNPJ alfanumérico</span><code>AA.AAA.AAA/AAAA-00</code></div>
+</div>
+</section>
+</aside>
+</div>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button>
+</div>
+</div>
+</section>
+<section class="tab-panel" id="lote">
+<div class="card">
+<div class="section-heading main-heading">
+<div>
+<h2>Gerador de número de lote</h2>
+<p class="section-description">
+                            Gere um ou vários números de lote com controle da sequência inicial e histórico local.
+                        </p>
+</div>
+</div>
+<div class="generator-grid">
+<section class="builder-panel">
+<div class="grid three-columns">
+<label>
+                                Setor
+                                <input id="loteSetor" inputmode="numeric" maxlength="3" type="text" value="99"/>
+</label>
+<label>
+                                Quadra
+                                <input id="loteQuadra" inputmode="numeric" maxlength="3" type="text" value="999"/>
+</label>
+<label>
+                                Quantidade
+                                <input id="loteQuantidade" max="100" min="1" type="number" value="1"/>
+</label>
+</div>
+<div class="grid two-columns">
+<label>
+                                Sequência inicial
+                                <input id="loteSequenciaInicial" max="99999" min="1" type="number" value="4"/>
+</label>
+<label>
+                                Separador
+                                <select id="loteSeparador">
+<option value="">Sem separador</option>
+<option value=".">Ponto (.)</option>
+<option value="-">Hífen (-)</option>
+<option value="/">Barra (/)</option>
+</select>
+</label>
+</div>
+<div class="registration-status">
+<div>
+<span class="status-label">Última sequência salva</span>
+<strong id="loteUltimaSequencia">00001</strong>
+</div>
+<div>
+<span class="status-label">Próxima sequência</span>
+<strong id="loteProximaSequencia">00002</strong>
+</div>
+<div>
+<span class="status-label">Quantidade</span>
+<strong id="loteQuantidadeResumo">1</strong>
+</div>
+</div>
+<div class="lot-preview-compact">
+<span>Conferência antes de gerar</span>
+<strong id="lotePreview">9999900004</strong>
+</div>
+<div class="actions lot-generate-actions">
+<button class="primary" id="gerarLotes">Gerar lote(s)</button>
+</div>
+<div class="result-box lot-result-box">
+<span>Resultado gerado</span>
+<pre id="loteResultado">—</pre>
+</div>
+<div class="actions lot-result-actions">
+<button class="secondary" id="baixarLotesTxt">Baixar TXT</button>
+<button class="secondary" id="limparLotes">Limpar resultado</button>
+<button class="danger-outline" id="reiniciarSequenciaLotes">Reiniciar sequência</button>
+</div>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button">
+<span aria-hidden="true">←</span>
+                    Voltar para a Página Inicial
+                </button>
+</div>
+</section>
+<aside class="generator-sidebar">
+<section class="sidebar-card">
+<div class="section-heading">
+<h3>Histórico de gerações</h3>
+</div>
+<ul class="history-list compact-list" id="loteHistorico">
+<li class="empty-state">Nenhum lote gerado recentemente.</li>
+</ul>
+</section>
+<section class="sidebar-card">
+<h3>Padrão atual</h3>
+<p class="help-text">
+                                Setor e quadra são completados com zeros à esquerda. A sequência utiliza cinco dígitos.
+                            </p>
+<div class="format-examples">
+<div>
+<span>Exemplo</span>
+<code id="lotePadraoExemplo">9999900004</code>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</section>
+<section class="tab-panel" id="uvrm">
+<div class="card">
+<div class="section-heading main-heading">
+<div>
+<h2>Calculadora UVRM</h2>
+<p class="section-description">
+                            Monte uma lista com vários lançamentos em reais ou UVRM, copie cada valor separadamente e acompanhe o total da operação.
+                        </p>
+</div>
+<span class="feature-badge">Lista de lançamentos</span>
+</div>
+<div class="generator-grid">
+<section class="builder-panel">
+<div class="grid two-columns">
+<label>
+                                Valor atual da UVRM (R$)
+                                <input autocomplete="off" id="uvrmValorUnitario" inputmode="decimal" type="text" value="5,2151"/>
+</label>
+<label>
+                                Casas decimais da UVRM
+                                <select id="uvrmCasas">
+<option value="2">2 casas</option>
+<option value="3">3 casas</option>
+<option value="4">4 casas</option>
+<option value="6">Sem arredondamento</option>
+</select>
+</label>
+</div>
+<div class="actions compact-actions">
+<button class="secondary" id="uvrmRestaurarPadrao">Restaurar valor padrão</button>
+</div>
+<div class="uvrm-entry-card">
+<div class="section-heading">
+<div>
+<h3>Novo lançamento</h3>
+<p class="mini-description">Informe um valor em reais ou uma quantidade de UVRM.</p>
+</div>
+</div>
+<label>
+                                Descrição <span class="optional-label">(opcional)</span>
+<span class="uvrm-description-picker" id="uvrmDescricaoPicker">
+<span class="uvrm-description-input-row">
+<input aria-autocomplete="list" aria-controls="uvrmDescricaoSugestoes" aria-expanded="false" autocomplete="off" id="uvrmDescricao" maxlength="100" placeholder="Ex.: Taxa de licença" type="text"/>
+<button aria-controls="uvrmDescricaoSugestoes" aria-expanded="false" aria-label="Mostrar descrições recentes" class="secondary uvrm-description-toggle" id="uvrmDescricaoAbrir" type="button">⌄</button>
+</span>
+<span class="uvrm-description-options" hidden="" id="uvrmDescricaoSugestoes" role="listbox"></span>
+</span>
+</label>
+<div class="grid two-columns">
+<label>
+                                    Tipo do valor
+                                    <select id="uvrmTipoLancamento">
+<option value="uvrm">Valor em UVRM</option>
+<option value="reais">Valor em reais</option>
+</select>
+</label>
+<label>
+<span id="uvrmValorLancamentoLabel">Valor em UVRM</span>
+<input autocomplete="off" id="uvrmValorLancamento" inputmode="decimal" placeholder="0,00" type="text"/>
+</label>
+<label id="uvrmMultiplicadorCampo">
+                                    Quantidade
+                                    <input autocomplete="off" id="uvrmMultiplicador" inputmode="numeric" min="1" step="1" type="number" value="1"/>
+<small class="field-hint">Ex.: quantidade de dias, meses ou ocorrências.</small>
+</label>
+</div>
+<p class="help-text" id="uvrmAjuda">O resultado será calculado antes de adicionar à lista.</p>
+<div class="preview-card">
+<span>Pré-visualização do lançamento</span>
+<strong id="uvrmResultado">—</strong>
+<small id="uvrmResultadoDetalhe"></small>
+</div>
+<div class="actions">
+<button class="primary" id="adicionarUvrmLancamento">Adicionar à lista</button>
+<button class="secondary" hidden="" id="cancelarEdicaoUvrm">Cancelar edição</button>
+<button class="secondary" id="limparUvrm">Limpar campos</button>
+</div>
+</div>
+<div class="uvrm-list-section">
+<div class="section-heading">
+<div>
+<h3>Lançamentos da operação atual</h3>
+<p class="mini-description">Copie individualmente o valor de cada item para lançar no sistema.</p>
+</div>
+<span class="counter-badge" id="uvrmContador">0 itens</span>
+</div>
+<div class="uvrm-current-list" id="uvrmListaAtual">
+<p class="empty-state">Nenhum lançamento adicionado.</p>
+</div>
+<div class="uvrm-totals">
+<span>Total da operação</span>
+<strong id="uvrmTotalAtual">R$ 0,00</strong>
+</div>
+<div class="actions">
+<button class="primary" id="copiarTodosUvrm">Copiar todos os valores</button>
+<button class="secondary" id="copiarUvrmCompleto">Copiar lista detalhada</button>
+<button class="secondary" id="copiarUvrmValor">Copiar total</button>
+<button class="secondary" id="salvarOperacaoUvrm">Finalizar e salvar</button>
+<button class="danger" id="limparListaUvrm">Limpar lista</button>
+</div>
+</div>
+</section>
+<aside class="generator-sidebar">
+<section class="sidebar-card">
+<div class="section-heading">
+<h3>Histórico de operações</h3>
+</div>
+<input id="pesquisaHistoricoUvrm" placeholder="Pesquisar no histórico" type="search"/>
+<div class="uvrm-operation-history" id="uvrmHistorico">
+<p class="empty-state">Nenhuma operação salva.</p>
+</div>
+</section>
+<section class="sidebar-card">
+<h3>Como funciona</h3>
+<p class="help-text">O valor unitário da UVRM e a lista atual são salvos automaticamente neste navegador.</p>
+<p class="help-text">Ao finalizar uma operação, todos os itens e o total ficam disponíveis no histórico.</p>
+</section>
+</aside>
+</div>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button"><span aria-hidden="true">←</span> Voltar para a Página Inicial</button>
+</div>
+</div>
+</section>
+<section class="tab-panel" id="percentual">
+<div class="card">
+<div class="section-heading main-heading">
+<div>
+<h2>Calculadora percentual</h2>
+<p class="section-description">
+                            Escolha o tipo de cálculo e obtenha o resultado automaticamente durante a digitação.
+                        </p>
+</div>
+</div>
+<div class="generator-grid">
+<section class="builder-panel">
+<label>
+                            Tipo de cálculo
+                            <select id="percentualModo">
+<option value="percentual">Quanto é um percentual de um valor?</option>
+<option value="acrescimo">Acrescentar percentual ao valor</option>
+<option value="desconto">Descontar percentual do valor</option>
+<option value="proporcao">Um valor representa quantos por cento de outro?</option>
+<option value="variacao">Qual foi a variação percentual entre dois valores?</option>
+</select>
+</label>
+<div class="grid two-columns">
+<label>
+<span id="percentualRotuloValor1">Valor base</span>
+<input autocomplete="off" id="percentualValor1" inputmode="decimal" placeholder="0,00" type="text"/>
+</label>
+<label>
+<span id="percentualRotuloValor2">Percentual</span>
+<input autocomplete="off" id="percentualValor2" inputmode="decimal" placeholder="0" type="text"/>
+</label>
+</div>
+<p class="help-text" id="percentualAjuda">
+                            Informe o valor base e o percentual desejado.
+                        </p>
+<div class="registration-status">
+<div>
+<span class="status-label">Operação</span>
+<strong id="percentualOperacaoResumo">Percentual do valor</strong>
+</div>
+<div>
+<span class="status-label">Resultado principal</span>
+<strong id="percentualResultadoResumo">—</strong>
+</div>
+<div>
+<span class="status-label">Situação</span>
+<strong id="percentualStatus">Aguardando</strong>
+</div>
+</div>
+<div class="preview-card">
+<span>Resultado completo</span>
+<strong id="percentualResultadoCompleto">—</strong>
+</div>
+<div class="results-grid percentual-results-grid">
+<div class="result-box">
+<span id="percentualResultadoSecundarioRotulo">Valor do percentual</span>
+<strong id="percentualResultadoSecundario">—</strong>
+</div>
+<div class="result-box">
+<span id="percentualResultadoFinalRotulo">Valor final</span>
+<strong id="percentualResultadoFinal">—</strong>
+</div>
+</div>
+<div class="actions">
+<button class="primary" id="copiarPercentualValor">Copiar resultado</button>
+<button class="secondary" id="copiarPercentualCompleto">Copiar cálculo completo</button>
+<button class="secondary" id="limparPercentual">Limpar campos</button>
+</div>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button">
+<span aria-hidden="true">←</span>
+                    Voltar para a Página Inicial
+                </button>
+</div>
+</section>
+<aside class="generator-sidebar">
+<section class="sidebar-card">
+<div class="section-heading">
+<h3>Histórico de cálculos</h3>
+</div>
+<input id="pesquisaHistoricoPercentual" placeholder="Pesquisar no histórico" type="search"/>
+<ul class="history-list compact-list" id="percentualHistorico">
+<li class="empty-state">Nenhum cálculo realizado.</li>
+</ul>
+</section>
+<section class="sidebar-card">
+<h3>Tipos disponíveis</h3>
+<div class="format-examples">
+<div>
+<span>Percentual</span>
+<code>10% de R$ 200,00 = R$ 20,00</code>
+</div>
+<div>
+<span>Proporção</span>
+<code>R$ 20,00 de R$ 200,00 = 10%</code>
+</div>
+<div>
+<span>Variação</span>
+<code>R$ 100,00 para R$ 120,00 = 20%</code>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</section>
+<section class="tab-panel" id="datas">
+<div class="card">
+<div class="section-heading main-heading">
+<div>
+<h2>Datas</h2>
+<p class="section-description">Conte dias entre datas ou calcule uma nova data somando ou subtraindo dias corridos.</p>
+</div>
+</div>
+<div class="datas-grid">
+<section class="builder-panel">
+<div class="form-grid">
+<label>
+                        Operação
+                        <select id="datasOperacao">
+<option selected="" value="entre">Contador de dias entre datas</option>
+<option value="somar">Somar Dias em Datas</option>
+<option value="subtrair">Subtrair Dias em Datas</option>
+</select>
+</label>
+<label>
+                        Data inicial
+                        <input id="datasInicio" type="date"/>
+</label>
+<label id="datasFinalCampo">
+                        Data final
+                        <input id="datasFinal" type="date"/>
+</label>
+<label hidden="" id="datasQuantidadeCampo">
+                        Quantidade de dias
+                        <input id="datasQuantidade" inputmode="numeric" min="0" placeholder="Ex.: 30" step="1" type="number"/>
+</label>
+</div>
+<p aria-live="polite" class="feedback-message" id="datasFeedback"></p>
+<div class="actions">
+<button class="primary" id="calcularDatas" type="button">Calcular</button>
+<button class="secondary" id="limparDatas" type="button">Limpar</button>
+</div>
+</section>
+<aside aria-live="polite" class="datas-result-card">
+<span class="eyebrow" id="datasResultadoRotulo">RESULTADO</span>
+<strong id="datasResultado">—</strong>
+<p id="datasResultadoDetalhe">Informe os dados para calcular.</p>
+<button class="secondary" disabled="" id="copiarDatasResultado" type="button">Copiar resultado</button>
+</aside>
+</div>
+<section class="sidebar-card dates-history-card">
+<div class="section-heading">
+<div>
+<h3>Histórico de cálculos</h3>
+<p class="mini-description">Resultados recentes salvos localmente e sincronizados.</p>
+</div>
+</div>
+<ul class="history-list compact-list" id="datasHistorico">
+<li class="empty-state">Nenhum cálculo de datas realizado recentemente.</li>
+</ul>
+</section>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button"><span aria-hidden="true">←</span> Voltar para a Página Inicial</button>
+</div>
+</div>
+</section>
+<section class="tab-panel" id="configuracoes">
+<div class="card">
+<div class="section-heading main-heading">
+<div><h2>Configurações e dados</h2><p class="section-description">Gerencie preferências, históricos e backups do aplicativo.</p></div>
+</div>
+<div class="generator-grid">
+<section class="builder-panel">
+<section class="settings-card">
+<h3>Dados preenchidos</h3>
+<p class="help-text">Controle se os campos persistentes podem ser salvos neste navegador e sincronizados com sua conta.</p>
+<label class="checkbox-row">
+<input id="salvarCampos" type="checkbox"/>
+                                Salvar dados preenchidos
+                            </label>
+<p class="help-text">Ao desativar, os dados preenchidos salvos localmente e online serão removidos. Preferências e históricos não são afetados.</p>
+<p aria-live="polite" class="feedback" id="salvarCamposStatus"></p>
+</section>
+<section class="settings-card">
+<h3>Backup completo</h3><p class="help-text">Exporte todas as preferências, modelos, sequências e históricos para um arquivo JSON.</p>
+<div class="actions"><button class="primary" id="exportarBackup">Exportar backup</button><label class="file-button secondary">Importar backup<input accept=".json,application/json" id="importarBackup" type="file"/></label></div>
+<p aria-live="polite" class="feedback" id="backupStatus"></p>
+<section class="settings-card">
+<h3>Limpeza seletiva</h3><p class="help-text">Remova somente os dados desejados, sem afetar os demais módulos.</p>
+<div class="settings-checklist">
+<label class="checkbox-row"><input id="limparModelosArquivos" type="checkbox"/>Modelos do gerador de nomes</label>
+<label class="checkbox-row"><input id="limparPreferenciasCampos" type="checkbox"/>Valores e preferências dos campos</label>
+<label class="checkbox-row"><input id="reiniciarSequenciaNoReset" type="checkbox"/>Reiniciar sequência de lotes</label>
+</div>
+<div class="actions"><button class="danger-outline" id="executarLimpezaSeletiva">Executar limpeza selecionada</button></div>
+</section>
+<section class="settings-card">
+<h3>Gerenciamento de históricos</h3>
+<p class="help-text">
+                                Escolha entre remover somente a cópia deste navegador ou propagar a exclusão
+                                para os históricos sincronizados da conta.
+                            </p>
+<div class="actions">
+<button class="danger-outline" id="limparHistoricosDispositivo" type="button">
+                                    Limpar históricos deste dispositivo
+                                </button>
+<button class="danger-outline" id="excluirHistoricosSincronizados" type="button">
+                                    Excluir históricos sincronizados
+                                </button>
+</div>
+<p class="help-text">
+                                A limpeza local não remove registros armazenados online e eles poderão retornar após uma nova sincronização. A exclusão sincronizada exige conexão e confirmação dupla.
+                            </p>
+</section>
+<section class="settings-card">
+<h3>Exportações e redefinições</h3>
+<div class="actions">
+<button class="secondary" id="exportarEstatisticasCsv" type="button">Estatísticas CSV</button>
+<button class="secondary" id="exportarEstatisticasJson" type="button">Estatísticas JSON</button>
+<button class="secondary" id="exportarEstatisticasTxt" type="button">Estatísticas TXT</button>
+<button class="danger-outline" id="resetarFavoritos" type="button">Resetar favoritos</button>
+</div>
+</section>
+<section class="settings-card">
+<div class="section-heading">
+<div><h3>Estatísticas detalhadas</h3><p class="help-text">Acessos e ações registrados localmente por módulo.</p></div>
+<button class="text-button" id="resetarEstatisticas" type="button">Zerar estatísticas</button>
+</div>
+<div class="settings-statistics-summary">
+<div><span>Total de acessos</span><strong id="configTotalAccesses">0</strong></div>
+<div><span>Total de ações</span><strong id="configTotalActions">0</strong></div>
+<div><span>Favoritos</span><strong id="configFavoriteCount">0</strong></div>
+</div>
+<div class="statistics-table-wrap">
+<table class="statistics-table">
+<thead><tr><th>Ferramenta</th><th>Acessos</th><th>Ações</th><th>Total</th></tr></thead>
+<tbody id="configStatisticsBody"></tbody>
+</table>
+</div>
+</section>
+<section class="settings-card danger-zone">
+<h3>Restaurar aplicativo</h3>
+<p class="help-text">
+                                Remove os dados locais deste navegador e retorna o aplicativo ao estado inicial.
+                                Dados sincronizados online não são excluídos por esta ação.
+                            </p>
+<div class="actions">
+<button class="danger-outline" id="limparTudo" type="button">
+                                    Apagar todos os dados locais
+                                </button>
+</div>
+</section>
+</section>
+<aside class="generator-sidebar">
+<section class="sidebar-card"><h3>Informações do aplicativo</h3><div class="format-examples"><div><span>Versão</span><code data-app-version=""></code></div><div><span>Armazenamento</span><code>Local do navegador</code></div><div><span>Formato do backup</span><code>JSON</code></div></div></section>
+<section class="sidebar-card"><h3>Último backup</h3><p class="help-text" id="ultimoBackupInfo">Nenhum backup registrado.</p></section>
+</aside>
+</section></div>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button>
+</div>
+</div>
+</section>
+<section class="tab-panel documents-panel" id="central-documentos">
+<div class="card documents-shell">
+<div class="section-heading main-heading">
+<div>
+<span class="eyebrow">Versão <span data-app-version=""></span></span>
+<h2>Central de documentos</h2>
+<p class="section-description">Crie, organize, edite e reutilize seus próprios modelos de documentos.</p>
+</div>
+<button class="secondary-button" id="documentNewModel" type="button">Novo modelo</button>
+</div>
+<section aria-label="Modelos de documentos" class="documents-models-panel">
+<div class="documents-models-heading">
+<div>
+<h3>Modelos de documento</h3>
+<p class="mini-description">Filtre e selecione o modelo que será carregado no documento.</p>
+</div>
+<div class="document-model-actions">
+<button class="secondary-button document-manage-groups" id="documentManageCategories" type="button">
+                                Gerenciar categorias
+                            </button>
+<button class="secondary-button document-manage-groups" id="documentManageGroups" type="button">
+                                Gerenciar grupos
+                            </button>
+<button class="text-button" id="documentExportModels" type="button">
+                                Exportar modelos
+                            </button>
+<button class="text-button" id="documentImportModels" type="button">
+                                Importar modelos
+                            </button>
+<input accept=".json,application/json" hidden="" id="documentImportModelsInput" type="file"/>
+</div>
+</div>
+<div class="document-filter-toolbar">
+<label class="document-search-field">
+<span>Pesquisar</span>
+<input id="documentSearch" placeholder="Título, categoria, grupo ou conteúdo" type="search"/>
+</label>
+<label>
+<span>Categoria</span>
+<select id="documentCategory">
+<option value="todos">Todas as categorias</option>
+<option>Despachos</option>
+<option>Certidões</option>
+<option>Ofícios</option>
+<option>WhatsApp</option>
+<option>Declarações</option>
+<option>Personalizados</option>
+</select>
+</label>
+<label>
+<span>Grupo</span>
+<select id="documentGroupFilter">
+<option value="todos">Todos os grupos</option>
+</select>
+</label>
+<label>
+<span>Ordem</span>
+<select id="documentOrder">
+<option value="titulo">Título</option>
+<option value="categoria">Categoria</option>
+<option value="grupo">Grupo</option>
+</select>
+</label>
+<button class="text-button document-clear-filters" id="documentClearFilters" type="button">
+                            Limpar filtros
+                        </button>
+</div>
+<label class="document-model-select-field">
+<span>Modelo</span>
+<select id="documentModelSelect">
+<option value="">Selecione um modelo de documento...</option>
+</select>
+</label>
+</section>
+<main class="documents-editor">
+<div class="document-editor-empty" id="documentEmptyState">
+<strong>Selecione um modelo</strong>
+<p>Escolha um modelo acima ou clique em “Novo modelo” para começar.</p>
+</div>
+<div class="document-editor-content" hidden="" id="documentEditorContent">
+<div class="documents-editor-heading">
+<div>
+<span class="eyebrow">Documento</span>
+<h3 id="documentEditorHeading">Novo modelo</h3>
+</div>
+</div>
+<section class="document-edit-section">
+<div class="document-model-meta-grid">
+<label>
+<span>Título do modelo</span>
+<input id="documentTitle" placeholder="Título completo do modelo"/>
+</label>
+<label>
+<span>Categoria</span>
+<select id="documentEditorCategory">
+<option>Despachos</option>
+<option>Certidões</option>
+<option>Ofícios</option>
+<option>WhatsApp</option>
+<option>Declarações</option>
+<option>Personalizados</option>
+</select>
+</label>
+<label>
+<span>Grupo</span>
+<select id="documentEditorGroup">
+<option value="">Sem grupo</option>
+</select>
+</label>
+</div>
+<label>
+<span>Modelo com variáveis</span>
+<textarea id="documentTemplate" placeholder="Use variáveis como {nome}, {processo}, {cnae}, {zoneamento}, {endereco} e {data}." rows="9"></textarea>
+</label>
+</section>
+<section class="document-variables-card">
+<div class="section-heading">
+<div>
+<h3>Variáveis do documento</h3>
+<p class="mini-description">Os campos abaixo são identificados automaticamente no texto do modelo.</p>
+</div>
+</div>
+<div class="document-variables-grid" id="documentVariables"></div>
+</section>
+<section class="document-preview-section">
+<label>
+<span>Pré-visualização</span>
+<textarea id="documentPreview" readonly="" rows="11"></textarea>
+</label>
+</section>
+<div class="documents-action-bar">
+<div class="documents-primary-actions">
+<button id="documentCopy" type="button">Copiar texto</button>
+<button class="secondary-button" id="documentSave" type="button">Salvar modelo</button>
+<button class="secondary-button" id="documentClear" type="button">Limpar campos</button>
+</div>
+<div class="documents-secondary-actions">
+<button class="text-button" id="documentDuplicate" type="button">Duplicar modelo</button>
+<button class="text-button" id="documentExportTxt" type="button">Exportar TXT</button>
+<button class="danger-button" id="documentDelete" type="button">Excluir modelo</button>
+</div>
+</div>
+<p aria-live="polite" class="feedback-message" id="documentFeedback"></p>
+</div>
+</main>
+<dialog class="document-group-dialog" id="documentCategoryDialog">
+<form class="document-group-dialog-card" method="dialog">
+<div class="document-group-dialog-heading">
+<div>
+<span class="eyebrow">Organização</span>
+<h3>Gerenciar categorias</h3>
+<p class="mini-description">Crie, renomeie ou exclua categorias usadas para classificar os modelos.</p>
+</div>
+<button aria-label="Fechar" class="text-button document-group-dialog-close" value="cancel">✕</button>
+</div>
+<div class="document-group-create-row">
+<label>
+<span>Nova categoria</span>
+<input id="documentNewCategoryName" maxlength="60" placeholder="Ex.: Licenciamento, Fiscalização, Atendimento"/>
+</label>
+<button class="primary-button" id="documentAddCategory" type="button">Adicionar</button>
+</div>
+<div class="document-group-list" id="documentCategoryList"></div>
+<p aria-live="polite" class="feedback-message" id="documentCategoryFeedback"></p>
+</form>
+</dialog>
+<dialog class="document-group-dialog" id="documentGroupDialog">
+<form class="document-group-dialog-card" method="dialog">
+<div class="document-group-dialog-heading">
+<div>
+<span class="eyebrow">Organização</span>
+<h3>Gerenciar grupos</h3>
+<p class="mini-description">Crie, renomeie ou exclua grupos usados para organizar os modelos.</p>
+</div>
+<button aria-label="Fechar" class="text-button document-group-dialog-close" value="cancel">✕</button>
+</div>
+<div class="document-group-create-row">
+<label>
+<span>Novo grupo</span>
+<input id="documentNewGroupName" maxlength="60" placeholder="Ex.: Licenciamento, Atendimento, Fiscalização"/>
+</label>
+<button class="primary-button" id="documentAddGroup" type="button">Adicionar</button>
+</div>
+<div class="document-group-list" id="documentGroupList"></div>
+<p aria-live="polite" class="feedback-message" id="documentGroupFeedback"></p>
+</form>
+</dialog>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button">
+<span aria-hidden="true">←</span>Voltar para a Página Inicial
+                    </button>
+</div>
+</div>
+</section>
+<section class="tab-panel productivity-panel" id="biblioteca">
+<div class="card">
+<div class="section-heading main-heading"><div><span class="eyebrow">Produtividade</span><h2>Biblioteca de ferramentas</h2><p class="section-description">Catálogo central para localizar ferramentas, favoritos e modelos reutilizáveis.</p></div></div>
+<div class="productivity-toolbar"><label class="productivity-search"><span>Pesquisar</span><input id="librarySearch" placeholder="Ferramenta, categoria ou palavra-chave" type="search"/></label><label><span>Categoria</span><select id="libraryCategory"><option value="todos">Todas</option></select></label><label><span>Exibição</span><select id="libraryView"><option value="grid">Grade</option><option value="list">Lista</option></select></label></div>
+<div class="library-summary"><div><span>Ferramentas</span><strong id="libraryToolCount">0</strong></div><div><span>Favoritos</span><strong id="libraryFavoriteCount">0</strong></div><div><span>Modelos de arquivo</span><strong id="libraryModelCount">0</strong></div></div>
+<section class="productivity-section"><div class="section-heading"><div><h3>Catálogo</h3><p class="mini-description">Abra uma ferramenta ou altere seus favoritos.</p></div></div><div class="library-tools" id="libraryTools"></div></section>
+<section class="productivity-section"><div class="section-heading"><div><h3>Modelos rápidos</h3><p class="mini-description">Modelos existentes do Montador de nome de arquivo.</p></div><button class="text-button" data-open-tab="arquivo" type="button">Gerenciar modelos</button></div><div class="library-models" id="libraryModels"></div></section>
+<div class="tab-footer-navigation"><button class="back-home-button" data-open-tab="inicio" type="button"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button></div>
+</div>
+</section>
+<section class="tab-panel productivity-panel" id="historico-global">
+<div class="card">
+<div class="section-heading main-heading"><div><span class="eyebrow">Produtividade</span><h2>Histórico global</h2><p class="section-description">Consulte e sincronize em um único lugar os registros produzidos pelos módulos, mantendo funcionamento local quando estiver offline.</p></div><div class="actions"><button class="primary-button" id="globalHistorySync" type="button">Sincronizar histórico</button><button class="secondary-button" id="globalHistoryExportCsv" type="button">Exportar CSV</button><button class="secondary-button" id="globalHistoryExportJson" type="button">Exportar JSON</button></div></div>
+<div class="productivity-toolbar"><label class="productivity-search"><span>Pesquisar</span><input id="globalHistorySearch" placeholder="Conteúdo do registro" type="search"/></label><label><span>Módulo</span><select id="globalHistoryModule"><option value="todos">Todos os módulos</option></select></label><label><span>Período</span><select id="globalHistoryPeriod"><option value="todos">Todo o período</option><option selected="" value="hoje">Hoje</option><option value="7">Últimos 7 dias</option><option value="30">Últimos 30 dias</option></select></label></div>
+<div class="library-summary"><div><span>Registros encontrados</span><strong id="globalHistoryCount">0</strong></div><div><span>Módulos com dados</span><strong id="globalHistoryModuleCount">0</strong></div><div><span>Pendentes</span><strong id="globalHistoryPending">0</strong></div><div><span>Última sincronização</span><strong id="globalHistoryLastSync">Nunca</strong></div><div><span>Último registro</span><strong id="globalHistoryLast">Nenhum</strong></div></div>
+<p aria-live="polite" class="help-text" id="globalHistorySyncStatus"></p><div class="global-history-list" id="globalHistoryList"></div>
+<div class="tab-footer-navigation"><button class="back-home-button" data-open-tab="inicio" type="button"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button></div>
+</div>
+</section>
+<section class="tab-panel" id="sobre">
+<div class="card about-card">
+<div class="section-heading main-heading">
+<div>
+<span class="eyebrow">Informações do aplicativo</span>
+<h2>Sobre os Utilitários Municipais</h2>
+<p class="section-description">Consulte a versão instalada, as novidades e o histórico de evolução do sistema.</p>
+</div>
+</div>
+<div class="about-grid">
+<section class="settings-card">
+<h3>Versão atual</h3>
+<dl class="about-details">
+<div><dt>Aplicativo</dt><dd data-app-name="">Utilitários Municipais</dd></div>
+<div><dt>Versão</dt><dd data-app-version=""></dd></div>
+<div><dt>Arquitetura</dt><dd>Modular — Série 4</dd></div>
+<div><dt>Armazenamento</dt><dd>Local + Backend Adapter</dd></div>
+<div><dt>Ambiente BD</dt><dd id="aboutDatabaseEnvironment">—</dd></div>
+</dl>
+</section>
+<section class="settings-card"><h3>Novidades da 4.7.1</h3><ul><li><strong>Recuperação de senha:</strong> passa a usar diretamente os endpoints REST oficiais do SuperDB, compatíveis com o cliente atualmente carregado pelo aplicativo.</li><li><strong>Nova senha:</strong> o envio do e-mail e a gravação da nova senha não dependem mais de métodos ausentes no SDK.</li><li><strong>Segurança:</strong> preserva a URL de retorno por ambiente e mantém sincronização e dados operacionais bloqueados antes do login.</li></ul></section>
+</div>
+<section class="settings-card">
+<h3>Histórico de versões</h3>
+<div class="about-timeline" id="aboutVersionHistory"><p class="help-text" data-version-history-status="">Carregando histórico de versões…</p></div>
+</section>
+<div class="tab-footer-navigation">
+<button class="back-home-button" data-open-tab="inicio" type="button"><span aria-hidden="true">←</span>Voltar para a Página Inicial</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="app-footer">
+<div class="app-footer-content">
+<p><span data-app-name="">Utilitários Municipais</span> • Versão <span data-app-version=""></span></p>
+<div class="footer-sync-status" id="footerSyncStatus">
+<span aria-hidden="true" class="footer-sync-dot" data-state="local" id="footerSyncDot"></span>
+<strong id="footerSyncText">Somente local</strong>
+<span id="footerSyncTime">Sem sincronização online</span>
+</div>
+</div>
+</footer>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script src="assets/js/core/config.js"></script>
+<script src="assets/js/services/logger.js"></script>
+<script src="assets/js/services/error-handler.js"></script>
+<script src="assets/js/services/version-service.js"></script>
+<script src="assets/js/services/backend-client.js"></script>
+<script src="assets/js/services/identity-gate-service.js"></script>
+<script src="assets/js/registry/tools.js"></script>
+<script src="assets/js/services/storage-service.js"></script>
+<script src="assets/js/services/history-service.js"></script>
+<script src="assets/js/services/online-sync-service.js"></script>
+<script src="assets/js/services/lot-sequence-service.js"></script>
+<script src="assets/js/core/sidebar-45.js"></script>
+<script src="assets/js/core/about-history-45.js"></script>
+<script src="assets/js/core/storage.js"></script>
+<script src="assets/js/core/utils.js"></script>
+<script src="assets/js/components/notifications.js"></script>
+<script src="assets/js/components/clipboard.js"></script>
+<script src="assets/js/components/modal.js"></script>
+<script src="assets/js/components/history.js"></script>
+<script src="assets/js/core/validation.js"></script>
+<script src="assets/js/components/component-library.js"></script>
+<script src="assets/js/core/module-manager.js"></script>
+<script src="assets/js/core/analytics.js"></script>
+<script src="assets/js/core/navigation.js"></script>
+<script src="assets/js/core/productivity.js"></script>
+<script src="assets/js/modules/dashboard.js"></script>
+<script src="assets/js/core/v3-dashboard.js"></script>
+<script src="assets/js/modules/arquivo.js"></script>
+<script src="assets/js/core/form-persistence.js"></script>
+<script src="assets/js/modules/inscricao.js"></script>
+<script src="assets/js/modules/cpf-cnpj.js"></script>
+<script src="assets/js/modules/lotes.js"></script>
+<script src="assets/js/modules/uvrm.js"></script>
+<script src="assets/js/modules/percentual.js"></script>
+<script src="assets/js/modules/datas.js"></script>
+<script src="assets/js/modules/configuracoes.js"></script>
+<script src="assets/js/modules/documentos.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/core/experience-31.js"></script>
+<script src="assets/js/core/dashboard-32.js"></script>
+<script src="assets/js/core/productivity-33.js"></script>
+<script id="appVersionBinder4354">
+        document.querySelectorAll("[data-app-version]").forEach((el) => { el.textContent = window.APP_VERSION || ""; });
+    </script>
+<script id="environmentBadgeDevInfra">
+        (() => {
+            const badge = document.getElementById("appEnvironmentBadge");
+            if (!badge) return;
+            const environment = window.APP_ENVIRONMENT || "production";
+            const isDevelopment = environment === "development";
+            badge.textContent = isDevelopment ? "DEV" : "";
+            badge.dataset.environment = environment;
+            badge.hidden = !isDevelopment;
+            const aboutEnvironment = document.getElementById("aboutDatabaseEnvironment");
+            if (aboutEnvironment) aboutEnvironment.textContent = isDevelopment ? "Desenvolvimento" : "Produção";
+            document.documentElement.dataset.appEnvironment = environment;
+        })();
+    </script>
+</body>
+</html>
